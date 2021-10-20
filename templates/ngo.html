@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+    <link href="{% static 'css/navbar.css' %}" rel="stylesheet">
+    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/list.css' %}" rel="stylesheet">
+
+    <title>Yellow Pages - NGOs</title>
+</head>
+
+<body>
+
+    <div class="navbar-container">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="{% url 'home' %}" class="left brand-logo">
+                    WeGuide
+                </a>
+                <ul id="nav-mobile" class="right menu-list">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'crowdsourcing' %}">Contribute</a></li>
+                    <li><a href="{% url 'faq' %}">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="nav-content">
+                <ul class="tabs row">
+                    <li class="tab col l2 s0"></li>
+                    <li class="tab col l2 s3"><a href="{% url 'scholarships' %}">Scholarships</a></li>
+                    <li class="tab col l2 s3"><a href="{% url 'loans'%}">Loans</a></li>
+                    <li class="tab col l2 s3"><a href="{% url 'books' %}">Bookbanks</a></li>
+                    <li class="tab col l2 s3 active"><a href="{% url 'ngos' %}">NGOs</a></li>
+                    <li class="tab col l2 s0"></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="card-container">
+        <div class="row">
+            <div class="col l2 m3 hide-on-small-only">
+                <form id="search">
+                    <div class="form-group">
+                        <input type="text" placeholder="Search NGOs" id="search-elem">
+                    </div>
+                    <button class="btn waves-effect waves-light searchbtn" type="submit">Search</button>
+                </form>
+
+                <form id="filterForm">
+                    <h6>Filters</h6>
+
+                    <label for="country">Country:</label>
+                    <select id="countries">
+                        <option value="" selected>All</option>
+                    </select>
+                    
+                    <label for="state">State/ Union Territory:</label>
+                    <select id="states">
+                        <option value="" selected>All</option>
+                    </select>
+
+                    <label for="category">Category:</label>
+                    <select id="categories">
+                        <option value="" selected>All</option>
+                    </select>
+
+                    <label for="type">Type:</label>
+                    <select id="types">
+                        <option value="" selected>All</option>
+                    </select>
+
+                    <label for="religion">Religion:</label>
+                    <select id="religions">
+                        <option value="" selected>All</option>
+                    </select>
+
+                    <label for="gender">Gender:</label>
+                    <select id="genders">
+                        <option value="" selected>All</option>
+                    </select>
+
+                    <button class="btn waves-effect waves-light submitbtn" name="action">Submit</button>
+
+                </form>
+            </div>
+            <div id="modal-container">
+                <ul class="pagination col l10 m9 s12" id="pagination"></ul>
+                <div class="modal modal-fixed-footer">
+                    <div class="modal-content ">
+                        <h4 class="modal-title"></h4>
+                        <p class="modal-body"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnClose" class="modal-close waves-effect waves-green btn-flat">Close</button>
+                    </div>
+                </div>
+
+                <div class="row col l10 m9" id="maincontainer">
+                    <!-- <div class="col s12 m12 l4">
+                        <div class="card">
+                            <div class="card-content">
+                                <span id="cardtitle" class="card-title black-text"></span>
+                                <div class="row" id="content"> 
+                                    <img src="" id="cardimg" class="col s4 m4 l4 offset-m4 offset-s4">
+                                    <p class="cardaward"></p>
+                                </div>
+                                <p class="truncate updated"></p>
+                                <br>
+                                <p id="deadline" class="truncate"></p>
+                            </div>
+                            <div class="card-action">
+                                <a href="">View Details</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer" style="background-color: #ffef96;">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12 leftcontent center">
+                    <h5 class="foot-head">WeGuide</h5>
+                    <p class="foot-text">
+                        An initiative by TMM
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12 foot-link center">
+                    <ul>
+                        <li><a href="#!">About</a></li>
+                        <li><a href="#!">Testimonials</a></li>
+                        <li><a href="#!">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                ©WeGuide 2021. All rights reserved.
+                <a class="right" href="{% url 'crowdsourcing' %}">Contribute to our cause</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+    <script src="{% static 'js/NGOs.js' %}"></script>
+
+</body>
+
+</html>

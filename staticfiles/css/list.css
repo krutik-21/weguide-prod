@@ -1,0 +1,164 @@
+*{
+    color: #50394c;
+}
+
+select{
+    display: unset !important;
+}
+
+.card-container{
+    position: relative;
+    margin-top: 16vmin !important;
+    font-family: Poppins;
+}
+
+#maincontainer {
+    border-left: 0.2vmin solid rgb(226, 226, 226);
+    padding-top: 3vmin;
+}
+
+.card-content {
+    text-align: left !important;
+    padding: 0 !important;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.cardtitle {
+    padding: 2vmin;
+    margin-bottom: 3vmin;
+    border-bottom: 0.2vmin solid #e2e2e2;
+    line-height: 3.7vmin;
+    font-size: 2.5vmin;
+    font-family: Raleway !important;
+    background-color: #b5e1e2;
+    text-transform: capitalize !important;
+    color: #50394c !important;
+}
+
+.contentrow{
+    margin: 0 !important;
+}
+
+.cardimg {
+    height: 7vmin;
+    width: 7vmin;
+    margin-bottom: 2vmin;
+    margin-right: 4vmin;
+}
+
+.cont1 {
+    width: 100%;
+    height: auto;
+    padding: 0.5vmin !important;
+    padding-left: 2vmin !important;
+    font-size: 2.3vmin;
+}
+
+.cont2, .cont3 {
+    width: 100%;
+    height: auto;
+    padding: 0.5vmin;
+    padding-left: 2vmin;
+    font-size: 2.3vmin;
+}
+
+.card-action {
+    text-align: center;
+    padding: 2vmin !important;
+}
+
+.card-action a{
+    font-size: 2.5vmin;
+}
+
+.pagination {
+    margin: 0 !important;
+    padding-top: 3vmin !important;
+    border-left: 0.2vmin solid rgb(226, 226, 226);
+}
+
+.pagebtn {
+    background-color: #b5e1e2;
+    margin-left: 0.5vmin;
+    margin-right: 0.5vmin;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+a.pageBtn{
+    width: 5vmin;
+}
+
+.pagebtn a{
+    color: #50394c !important;
+}
+
+.pagebtn:active{
+    background-color: #ffef96 !important;
+}
+
+.searchbtn {
+    height: 5vmin;
+    width: 13vmin;
+    font-size: 2vmin;
+    line-height: 5vmin;
+    background-color: #b5e1e2;
+    color: #50394c;
+}
+
+.searchbtn:hover{
+    background-color: #b5e1e2;
+}
+
+.searchbtn:focus{
+    background-color: #b5e1e2;
+}
+
+.modal {
+    position: fixed;
+    display: flex;
+    z-index: -1;
+    visibility: hidden;
+    transition: all .2s linear;
+}
+
+.modal-show {
+    z-index: 100;
+    visibility: visible;
+}
+
+.modal-trigger{
+    color: #b5e1e2 !important;
+    font-size: 3vmin;
+    text-align: center;
+    margin: 0 !important;
+}
+
+.submitbtn{
+    height: 5vmin;
+    width: 13vmin;
+    font-size: 2vmin;
+    line-height: 5vmin;
+    background-color: #b5e1e2;
+    color: #50394c;
+}
+
+.submitbtn:hover{
+    background-color: #b5e1e2;
+}
+
+.submitbtn:focus{
+    background-color: #b5e1e2;
+}
+
+.pagebtnactive{
+    background-color: #b5e1e2;
+}
+
+@media only screen and (max-width: 768px) {
+    a.pageBtn{
+        width: 8vmin;
+    }
+}

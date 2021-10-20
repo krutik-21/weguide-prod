@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+    <link href="{% static 'css/navbar.css' %}" rel="stylesheet">
+    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/faq.css' %}" rel="stylesheet">
+
+    <title>Yellow Pages - FAQs</title>
+</head>
+
+<body>
+    <div class="navbar-container" style="flex: 1 0 auto !important;">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="{% url 'home' %}" class="left brand-logo">
+                    WeGuide
+                </a>
+                <ul id="nav-mobile" class="right menu-list">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'crowdsourcing' %}">Contribute</a></li>
+                    <li class="active"><a href="{% url 'faq' %}">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="nav-content">
+                <ul class="tabs row">
+                    <li class="tab col l2 s0"></li>
+                    <li class="tab col l2 s3"><a href="{% url 'scholarships' %}">Scholarships</a></li>
+                    <li class="tab col l2 s3"><a href="{% url 'loans' %}">Loans</a></li>
+                    <li class="tab col l2 s3"><a href="{% url 'books' %}">Bookbanks</a></li>
+                    <li class="tab col l2 s3"><a href="{% url 'ngos' %}">NGOs</a></li>
+                    <li class="tab col l2 s0"></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="faqcontainer">
+        <div class="row">
+            <div class="col l2 hide-on-med-and-down">
+                <p style="color: #50394c;">Category</p>
+                <form action="#">
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Scholarships</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Loans</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Books</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>About us</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Guidance</span>
+                        </label>
+                    </p>
+                    <input type="submit" class="waves-effect waves-light btn submitbtn" value="Apply"></a>
+            </div>
+            <div class="quescont col l10 m12 s12">
+                <h5>Frequently Asked Questions</h5>
+                <p>One stop destination to all your queries related to scholarships,loans,books and selecting your
+                    career options
+                </p>
+                <ul class="collapsible expandable">
+                    <li>
+                        <div class="collapsible-header">First</div>
+                        <div class="collapsible-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Second</div>
+                        <div class="collapsible-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat</div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Third</div>
+                        <div class="collapsible-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Fourth</div>
+                        <div class="collapsible-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12 leftcontent center">
+                    <h5 class="foot-head">WeGuide</h5>
+                    <p class="foot-text">
+                        An initiative by TMM
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12 foot-link center">
+                    <ul>
+                        <li><a href="#!">About</a></li>
+                        <li><a href="#!">Testimonials</a></li>
+                        <li><a href="#!">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                ©WeGuide 2021. All rights reserved.
+                <a class="right" href="{% url 'crowdsourcing' %}">Contribute to our cause</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="{% static 'js/faq.js' %}"></script>
+</body>
+
+</html>
