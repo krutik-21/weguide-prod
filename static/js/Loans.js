@@ -70,7 +70,7 @@ async function getfields(url) {
 
     try {
         var loanamt = document.getElementById('loan_amounts')
-        for (var i = 0; i < b['LoanAmt'].length; i++) {
+        for (var i = 0; i < b['loan_amount'].length; i++) {
             var option = document.createElement('option')
             option.innerHTML = b['LoanAmt'][i].name
             loanamt.appendChild(option)
