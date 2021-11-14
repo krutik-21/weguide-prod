@@ -1,8 +1,27 @@
+*{
+    color: #50394c;
+}
 .brand-logo {
     margin-left: 7vmin;
     font-size: 5vmin !important;
     font-family: Lobster;
     color: #50394c !important;
+}
+
+.nav-extended, .sidenav{
+    background-color: #ffef96e0 !important;
+    font-family: 'Raleway' !important;
+    margin: 0 !important;
+}
+
+.nav-content{
+    margin-top: 5vmin;
+}
+
+#nav-mobile li a{
+    /* font-size: 2.5vmin; */
+    color: #50394c !important;
+    height: 3%;
 }
 
 nav {
@@ -22,13 +41,17 @@ nav {
     top: 8vmin;
     height: 8vmin;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 5% !important;
     background-color: #ffef96e0 !important;
-    border-bottom: 0.1vmin solid #b1b1b1;
+    /* border-bottom: 0.1vmin solid #b1b1b1; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .tabs li{
     height: 8vmin !important;
+    width: 18%;
 }
 
 .tabs li.active{
@@ -44,7 +67,7 @@ nav {
 
 .tab a{
     height: 8vmin !important;
-    background-color: transparent;
+    /* background-color: transparent; */
     border-radius: 0.3vmin;
     color: #50394c !important;
     padding: 0 !important;
@@ -62,15 +85,28 @@ nav {
     border-bottom: none;
 }
 
-.menu-list li a {
-    font-size: 2.5vmin;
-    color: #50394c;
-}
-
 .active{
     font-weight: bold;
 }
 
 .tabs .row::after{
     display: none;
+}
+
+
+@media (max-width: 960px) {
+    nav {
+        height: 15vmin;
+        line-height: 15vmin;
+    }
+
+    nav.nav-select     { display: none; }
+    nav select { display: inline-block; }
+    .brand-logo{
+        font-size: 7vmin !important;
+    }
+
+    .nav-content{
+        display: none;
+    }
 }

@@ -8,7 +8,7 @@ select{
 
 .card-container{
     position: relative;
-    margin-top: 16vmin !important;
+    margin-top: 5vmin;
     font-family: Poppins;
 }
 
@@ -158,7 +158,27 @@ a.pageBtn{
 }
 
 @media only screen and (max-width: 768px) {
-    a.pageBtn{
+    /* a.pageBtn{
         width: 8vmin;
+    } */
+
+    .row,.col{
+        float: none !important;
+    }
+    
+    .main-container{
+        border: 2px #50394c !important;
+    }
+
+    .cardtitle {
+        padding: 2vmin;
+        margin-bottom: 3vmin;
+        border-bottom: 0.2vmin solid #e2e2e2;
+        line-height: 3.7vmin;
+        font-size: 2.5vmin;
+        font-family: Raleway !important;
+        background-color: #b5e1e2;
+        text-transform: capitalize !important;
+        color: #50394c !important;
     }
 }

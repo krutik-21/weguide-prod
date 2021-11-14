@@ -1,10 +1,13 @@
-var url = 'https://34.86.68.175/api/loans/active/?'
+// var url = 'https://34.86.68.175/api/loans/active/?'
+var url = 'http://localhost:8000/api/loans/active/';
 var scholarships;
 var page = 1
 var modal = document.querySelector('.modal')
 var modalTitle = document.querySelector('.modal-title')
 var modalDetails = document.querySelector('.modal-body')
 var displayItems = ['updated_on', 'state', 'district', 'country', 'religion', 'category','loan_amount', 'interest', 'eligibility', 'content', 'email', 'contact', 'site_url']
+var elem = document.querySelector('.sidenav');
+var instance = new M.Sidenav(elem);
 
 getscholar(url, page = 1)
     .catch(error => {
@@ -12,7 +15,7 @@ getscholar(url, page = 1)
     })
 
 async function getscholar(url, page = 1) {
-    url += `page=${page}`
+    // url += `page=${page}`
     const schlist = await fetch(url)
     const resp = await schlist.json()
     scholarships = {
@@ -25,7 +28,8 @@ async function getscholar(url, page = 1) {
 
 async function getfields(url) {
 
-    var filterFields = 'https://34.86.68.175/api/loans/filterFields/'
+    // var filterFields = 'https://34.86.68.175/api/loans/filterFields/'
+    var filterFields = 'http://locathost:8000/api/loans/filterFields/'
     var fields = await fetch(filterFields)
     var b = await fields.json()
 
@@ -97,7 +101,8 @@ getfields()
 var form = document.getElementById("filterForm");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    url = "https://34.86.68.175/api/loans/filter/?"
+    // url = "https://34.86.68.175/api/loans/filter/?"
+    url = "http://locathost:8000/api/loans/filter/?"
     var filterVal = {
         state: document.getElementById('states').value,
         category: document.getElementById('categories').value,
@@ -279,7 +284,8 @@ var search = document.getElementById("search");
 search.addEventListener('submit', (e) => {
     e.preventDefault();
     page = 1
-    url = "https://34.86.68.175/api/loans/search/?"
+    // url = "https://34.86.68.175/api/loans/search/?"
+    url = "http://locathost:8000/api/loans/search/?"
     var filterVal = {
         q: document.getElementById('search-elem').value,
     }
@@ -299,7 +305,8 @@ search.addEventListener('submit', (e) => {
 });
 
 async function getState(country){
-    url = `https://34.86.68.175/api/loans/getState/?country=${country}`
+    // url = `https://34.86.68.175/api/loans/getState/?country=${country}`
+    url = `http://locathost:8000/api/loans/getState/?country=${country}`
     const stateList = await fetch(url)
     const resp = await stateList.json()
     console.log(resp)
@@ -313,7 +320,8 @@ async function getState(country){
 
 
 async function getDistrict(state){
-    url = `https://34.86.68.175/api/loans/getDistrict/?state=${state}`
+    // url = `https://34.86.68.175/api/loans/getDistrict/?state=${state}`
+    url = `http://localhost:8000/api/loans/getDistrict/?state=${state}`
     const districtList = await fetch(url)
     const resp = await districtList.json()
     console.log(resp)

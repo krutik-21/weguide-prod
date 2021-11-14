@@ -1,4 +1,4 @@
-var url = 'https://34.86.68.175/api/scholarship/active/?'
+var url = 'http://localhost:8000/api/scholarship/active/'
 var scholarships;
 var page = 1
 var modal = document.querySelector('.modal')
@@ -6,14 +6,17 @@ var modalTitle = document.querySelector('.modal-title')
 var modalDetails = document.querySelector('.modal-body')
 var displayItems = ['updated_on', 'deadline', 'state', 'country', 'category', 'stype', 'gender','religion', 'about', 'sclass', 'course', 'eligibility', 'award', 'content', 'site_url', 'contact']
 
+var elem = document.querySelector('.sidenav');
+var instance = new M.Sidenav(elem);
+
 getscholar(url, page = 1)
     .catch(error => {
         console.log(error)
     })
 
 async function getscholar(url, page = 1) {
-    url += `page=${page}`
-    const schlist = await fetch(url)
+    // url += `page=${page}`
+    const schlist = await fetch(url) 
     const resp = await schlist.json()
     scholarships = {
         ...resp
@@ -25,7 +28,8 @@ async function getscholar(url, page = 1) {
 
 async function getfields(url) {
 
-    var filterFields = 'https://34.86.68.175/api/scholarship/filterFields/'
+    // var filterFields = 'https://34.86.68.175/api/scholarship/filterFields/'
+    var filterFields = 'http://localhost:8000/api/scholarship/filterFields/'
     var fields = await fetch(filterFields)
     var b = await fields.json()
 
@@ -90,7 +94,8 @@ getfields()
 var form = document.getElementById("filterForm");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    url = "https://34.86.68.175/api/scholarship/filter/?"
+    // url = "https://34.86.68.175/api/scholarship/filter/?"
+    url = "http://localhost:8000/api/scholarship/filter/?"
     var filterVal = {
         state: document.getElementById('states').value,
         category: document.getElementById('categories').value,
@@ -256,7 +261,7 @@ function createPagination(count) {
 
     if (totalPages > 0) {
         for (var i = 1; i <= totalPages; i++) {
-            btn = document.createElement('li')
+            var btn = document.createElement('li')
             btn.setAttribute('class', 'waves-effect pagebtn')
             pageCont.appendChild(btn)
             var btna = document.createElement('a')
@@ -276,7 +281,8 @@ var search = document.getElementById("search");
 search.addEventListener('submit', (e) => {
     e.preventDefault();
     page = 1
-    url = "https://34.86.68.175/api/scholarship/search/?"
+    // url = "https://34.86.68.175/api/scholarship/search/?"
+    url = "http://localhost:8000/api/scholarship/search/?"
     var filterVal = {
         q: document.getElementById('search-elem').value,
     }
@@ -296,7 +302,8 @@ search.addEventListener('submit', (e) => {
 });
 
 async function getState(country){
-    url = `https://34.86.68.175/api/scholarship/getState/?country=${country}`
+    // url = `https://34.86.68.175/api/scholarship/getState/?country=${country}`
+    url = `http://localhost:8000/api/scholarship/getState/?country=${country}`
     const stateList = await fetch(url)
     const resp = await stateList.json()
     console.log(resp)

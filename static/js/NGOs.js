@@ -1,10 +1,13 @@
-var url = 'https://34.86.68.175/api/ngo/active/?'
+// var url = 'https://34.86.68.175/api/ngo/active/?'
+var url = 'http://localhost:8000/api/ngo/active/?'
 var scholarships;
 var page = 1
 var modal = document.querySelector('.modal')
 var modalTitle = document.querySelector('.modal-title')
 var modalDetails = document.querySelector('.modal-body')
 var displayItems = ['updated_on', 'state', 'country', 'category', 'stype', 'religion', 'gender', 'eligibility', 'content', 'site_url', 'location', 'contact', 'email']
+var elem = document.querySelector('.sidenav');
+var instance = new M.Sidenav(elem);
 
 getscholar(url, page = 1)
     .catch(error => {
@@ -12,7 +15,7 @@ getscholar(url, page = 1)
     })
 
 async function getscholar(url, page = 1) {
-    url += `page=${page}`
+    // url += `page=${page}`
     const schlist = await fetch(url)
     const resp = await schlist.json()
     scholarships = {
@@ -25,7 +28,8 @@ async function getscholar(url, page = 1) {
 
 async function getfields(url) {
 
-    var filterFields = 'https://34.86.68.175/api/ngo/filterFields/'
+    // var filterFields = 'https://34.86.68.175/api/ngo/filterFields/'
+    var filterFields = 'http://localhost:8000/api/ngo/filterFields/'
     var fields = await fetch(filterFields)
     var b = await fields.json()
 
@@ -98,7 +102,8 @@ getfields()
 var form = document.getElementById("filterForm");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    url = "https://34.86.68.175/api/ngo/filter/?"
+    // url = "https://34.86.68.175/api/ngo/filter/?"
+    url = "http://localhost:8000/api/ngo/filter/?"
     var filterVal = {
         state: document.getElementById('states').value,
         category: document.getElementById('categories').value,
@@ -280,7 +285,8 @@ var search = document.getElementById("search");
 search.addEventListener('submit', (e) => {
     e.preventDefault();
     page = 1
-    url = "https://34.86.68.175/api/ngo/search/?"
+    // url = "https://34.86.68.175/api/ngo/search/?"
+    url = "http://localhost/api/ngo/search/?"
     var filterVal = {
         q: document.getElementById('search-elem').value,
     }
@@ -300,7 +306,8 @@ search.addEventListener('submit', (e) => {
 });
 
 async function getState(country){
-    url = `https://34.86.68.175/api/ngo/getState/?country=${country}`
+    // url = `https://34.86.68.175/api/ngo/getState/?country=${country}`
+    url = `https://localhost:8000/api/ngo/getState/?country=${country}`
     const stateList = await fetch(url)
     const resp = await stateList.json()
     console.log(resp)

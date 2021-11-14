@@ -4,9 +4,9 @@ body {
     flex-direction: column !important;
 }
 
-.start {
+/* .start {
     flex: 1 0 auto !important;
-}
+} */
 
 .start {
     padding: 2vmin;
@@ -98,13 +98,46 @@ input, textarea{
 
 @media only screen and (max-width: 768px){
     .forminput{
-        width: 95%;
+        width: 90%;
         padding-left: 0vmin;
         padding-right: 0vmin;
         padding: 1vmin;
     }
+
+    .inform{
+        margin: 2vmin;
+    }
+    .start{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .start div{
+        width: 40%;
+        margin-bottom: 7vmin;
+    }
+
     .optbtn{
+        width: 100%;
+        height: 150%;
+        font-size: 85%;
         margin-left: 0.5vmin;
         margin-right: 0.5vmin;
+    }
+    
+    input, textarea{
+        height: 8vmin !important;
+        font-size: 4vmin !important;
+        margin-top: 5vmin !important;
+    }
+
+    .input-field label{
+        font-size: 5vmin;
+    }
+
+    .submitbtn{
+        width: 50%;
+        padding-bottom: 3vmin;
     }
 }

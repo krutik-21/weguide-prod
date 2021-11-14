@@ -1,4 +1,5 @@
-var url = 'https://34.86.68.175/api/bookbanks/active/?'
+// var url = 'https://34.86.68.175/api/bookbanks/active/?'
+var url = 'http://localhost:8000/api/bookbanks/active/?'
 var scholarships;
 var page = 1
 var modal = document.querySelector('.modal')
@@ -6,13 +7,16 @@ var modalTitle = document.querySelector('.modal-title')
 var modalDetails = document.querySelector('.modal-body')
 var displayItems = ['updated_on', 'books', 'state', 'district', 'address', 'content', 'contact', 'site_url']
 
+var elem = document.querySelector('.sidenav');
+var instance = new M.Sidenav(elem);
+
 getscholar(url, page = 1)
     .catch(error => {
         console.log(error)
     })
 
 async function getscholar(url, page = 1) {
-    url += `page=${page}`
+    // url += `page=${page}`
     console.log(url)
     const schlist = await fetch(url)
     const resp = await schlist.json()
@@ -27,6 +31,7 @@ async function getscholar(url, page = 1) {
 async function getfields(url) {
 
     var filterFields = 'https://34.86.68.175/api/bookbanks/filterFields/'
+    var filterFields = 'http://localhost:8000/api/bookbanks/filterFields/'
     var fields = await fetch(filterFields)
     var b = await fields.json()
 
@@ -66,7 +71,8 @@ getfields()
 var form = document.getElementById("filterForm");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    url = "https://34.86.68.175/api/bookbanks/filter/?"
+    // url = "https://34.86.68.175/api/bookbanks/filter/?"
+    url = "http://localhost:8000/api/bookbanks/filter/?"
     var filterVal = {
         state: document.getElementById('states').value,
         district: document.getElementById('districts').value,
@@ -240,7 +246,8 @@ var search = document.getElementById("search");
 search.addEventListener('submit', (e) => {
     e.preventDefault();
     page = 1
-    url = "https://34.86.68.175/api/bookbanks/search/?"
+    // url = "https://34.86.68.175/api/bookbanks/search/?"
+    url = "http://localhost:8000/api/bookbanks/search/?"
     var filterVal = {
         q: document.getElementById('search-elem').value,
     }
@@ -260,7 +267,8 @@ search.addEventListener('submit', (e) => {
 });
 
 async function getDistrict(state){
-    url = `https://34.86.68.175/api/bookbanks/getDistrict/?state=${state}`
+    // url = `https://34.86.68.175/api/bookbanks/getDistrict/?state=${state}`
+    url = `http://localhost:8000/api/bookbanks/getDistrict/?state=${state}`
     const districtList = await fetch(url)
     const resp = await districtList.json()
     try {

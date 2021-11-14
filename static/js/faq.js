@@ -4,3 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
         accordion: false
     });
 });
+
+var elem = document.querySelector('.sidenav');
+var instance = new M.Sidenav(elem);

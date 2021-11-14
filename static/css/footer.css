@@ -31,3 +31,9 @@
 .container a {
     color: #50394c;
 }
+
+@media(max-width: 960px){
+    .page-footer{
+        max-width: 100vw !important;
+    }
+}

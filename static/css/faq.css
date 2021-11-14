@@ -9,7 +9,7 @@ body {
 }
 
 .faqcontainer{
-    margin-top: 16vmin;
+    margin-top: 8vmin;
 }
 
 .submitbtn {
@@ -53,10 +53,18 @@ body {
 
 @media only screen and (max-width: 768px) {
     .quescont{
-        padding-left: 2vmin !important;
-        padding-right: 2vmin !important;
+        padding: 0vmin 4vmin !important;
     }
     .quescont h5, .quescont p{
         text-align: center;
+    }
+
+    .collapsible-header{
+        font-size: 3.5vmin;
+    }
+
+    .collapsible-body{
+        font-size: 3.3vmin;
+        padding: 15px;
     }
 }

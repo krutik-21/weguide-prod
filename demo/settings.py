@@ -127,10 +127,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-CORS_ALLOWED_ORIGINS = [
-    "https://34.86.68.175",
-    "https://weguide.in",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "https://34.86.68.175",
+#     "https://weguide.in",
+# ]
+
+CORS_ALLOW_ALL_ORIGIN: True
 
 
 
