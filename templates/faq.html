@@ -11,7 +11,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" /> -->
 
     <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
@@ -25,8 +25,8 @@
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <nav class="nav-extended">
+    <div class="navbar-container">
+        <nav>
             <div class="nav-wrapper">
                 <a href="{% url 'home' %}" class="brand-logo">
                     WeGuide
@@ -34,14 +34,14 @@
                 <a href="#" class="sidenav-trigger" data-target="mobile-links">
                     <i class="material-icons">menu</i>
                 </a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" class="right menu-list hide-on-med-and-down">
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'crowdsourcing' %}">Contribute</a></li>
                     <li class="active"><a href="{% url 'faq' %}">FAQs</a></li>
                 </ul>
             </div>
             <div class="nav-content">
-                <ul class="tabs row tabs-transparent hide-on-med-and-down">
+                <ul class="tabs row hide-on-med-and-down">
                     <li class="tab col"><a href="{% url 'scholarships' %}">Scholarships</a></li>
                     <li class="tab col"><a href="{% url 'loans' %}">Loans</a></li>
                     <li class="tab col"><a href="{% url 'books' %} ">Bookbanks</a></li>

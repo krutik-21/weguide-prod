@@ -1,5 +1,5 @@
 // var url = 'https://34.86.68.175/api/ngo/active/?'
-var url = 'http://localhost:8000/api/ngo/active/?'
+var url = 'http://192.168.29.182:8000/api/ngo/active/?'
 var scholarships;
 var page = 1
 var modal = document.querySelector('.modal')
@@ -7,6 +7,8 @@ var modalTitle = document.querySelector('.modal-title')
 var modalDetails = document.querySelector('.modal-body')
 var displayItems = ['updated_on', 'state', 'country', 'category', 'stype', 'religion', 'gender', 'eligibility', 'content', 'site_url', 'location', 'contact', 'email']
 var elem = document.querySelector('.sidenav');
+var body = document.getElementsByTagName('body')
+var backDrop = document.getElementById('backDrop')
 var instance = new M.Sidenav(elem);
 
 getscholar(url, page = 1)
@@ -15,7 +17,7 @@ getscholar(url, page = 1)
     })
 
 async function getscholar(url, page = 1) {
-    // url += `page=${page}`
+    url += `page=${page}`
     const schlist = await fetch(url)
     const resp = await schlist.json()
     scholarships = {
@@ -29,7 +31,7 @@ async function getscholar(url, page = 1) {
 async function getfields(url) {
 
     // var filterFields = 'https://34.86.68.175/api/ngo/filterFields/'
-    var filterFields = 'http://localhost:8000/api/ngo/filterFields/'
+    var filterFields = 'http://192.168.29.182:8000/api/ngo/filterFields/'
     var fields = await fetch(filterFields)
     var b = await fields.json()
 
@@ -103,7 +105,7 @@ var form = document.getElementById("filterForm");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     // url = "https://34.86.68.175/api/ngo/filter/?"
-    url = "http://localhost:8000/api/ngo/filter/?"
+    url = "http://192.168.29.182:8000/api/ngo/filter/?"
     var filterVal = {
         state: document.getElementById('states').value,
         category: document.getElementById('categories').value,
@@ -121,6 +123,10 @@ form.addEventListener('submit', (e) => {
     getscholar(url).catch(error => {
         console.log(error)
     })
+    if(window.innerWidth <= 960){
+        document.getElementById('search-form').style.transform = 'translateY(100%)';
+        backDrop.setAttribute('style','display:none')
+    }
 });
 
 function createCard(resp) {
@@ -215,6 +221,8 @@ function createCard(resp) {
         }
         document.querySelectorAll('.modal-trigger').forEach(item => {
             item.addEventListener('click', event => {
+                body[0].setAttribute('style','overflow:hidden;')
+                backDrop.setAttribute('style','display:block; opacity:0.5')
                 modal.classList.add('modal-show')
                 var scholarshipDetail
                 for (var i = 0; i < resp.results.length; i++) {
@@ -255,6 +263,17 @@ function createCard(resp) {
 btnClose = document.getElementById('btnClose')
 btnClose.addEventListener('click', () => {
     modal.classList.remove('modal-show')
+    body[0].removeAttribute('style')
+    backDrop.setAttribute('style','display:none')
+})
+
+backDrop.addEventListener('click', () => {
+    modal.classList.remove('modal-show')
+    body[0].removeAttribute('style')
+    backDrop.setAttribute('style','display:none')
+    if(window.innerWidth <= 960){
+        document.getElementById('search-form').style.transform = 'translateY(100%)';
+    }
 })
 
 function createPagination(count) {
@@ -286,7 +305,7 @@ search.addEventListener('submit', (e) => {
     e.preventDefault();
     page = 1
     // url = "https://34.86.68.175/api/ngo/search/?"
-    url = "http://localhost/api/ngo/search/?"
+    url = "http://192.168.29.182/api/ngo/search/?"
     var filterVal = {
         q: document.getElementById('search-elem').value,
     }
@@ -302,12 +321,15 @@ search.addEventListener('submit', (e) => {
     getscholar(url).catch(error => {
         console.log(error)
     })
-
+    if(window.innerWidth <= 960){
+        document.getElementById('search-form').style.transform = 'translayeY(100%)';
+        backDrop.setAttribute('style','display:none')
+    }
 });
 
 async function getState(country){
     // url = `https://34.86.68.175/api/ngo/getState/?country=${country}`
-    url = `https://localhost:8000/api/ngo/getState/?country=${country}`
+    url = `https://192.168.29.182:8000/api/ngo/getState/?country=${country}`
     const stateList = await fetch(url)
     const resp = await stateList.json()
     console.log(resp)
@@ -324,4 +346,10 @@ document.getElementById("countries").addEventListener('input',()=>{
     var country = document.getElementById("countries").value
     console.log(country)
     getState(country)
+})
+
+document.getElementById('search-trigger').addEventListener('click',()=>{
+    document.getElementById('search-form').style.transform = 'translateY(0%)';
+    body[0].setAttribute('style','overflow:hidden;')
+    backDrop.setAttribute('style','display:block; opacity:0.5')
 })

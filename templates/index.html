@@ -24,8 +24,8 @@
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <nav class="nav-extended">
+    <div class="navbar-container">
+        <nav>
             <div class="nav-wrapper">
                 <a href="{% url 'home' %}" class="brand-logo">
                     WeGuide
@@ -33,7 +33,7 @@
                 <a href="#" class="sidenav-trigger" data-target="mobile-links">
                     <i class="material-icons">menu</i>
                 </a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" class="right menu-list hide-on-med-and-down">
                     <li class="active"><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'crowdsourcing' %}">Contribute</a></li>
                     <li><a href="{% url 'faq' %}">FAQs</a></li>

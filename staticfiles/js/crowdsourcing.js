@@ -83,7 +83,7 @@ ngoform = document.getElementById("crowdsource-ngo");
 
 scholform.addEventListener('submit',(e)=>{
     e.preventDefault();
-    url = "http://localhost:8000/api/scholarship/crowdSource/";
+    url = "http://192.168.29.182:8000/api/scholarship/crowdSource/";
     var data = getData(e.target.children[0].children[0].innerText);
     fetch(url,{
         method: "POST",
@@ -98,15 +98,15 @@ scholform.addEventListener('submit',(e)=>{
         return Promise.reject(response);
     }).then(function (data) {
         alert("Your data has been recorded. Thank you for the information.");
+        location.reload()
     }).catch(function (error) {
         console.warn('Something went wrong.', error);
-        alert(error);
     });
 });
 
 loanform.addEventListener('submit',(e)=>{
     e.preventDefault();
-    url = "http://localhost:8000/api/loans/crowdSource/";
+    url = "http://192.168.29.182:8000/api/loans/crowdSource/";
     var data = getData(e.target.children[0].children[0].innerText);
     fetch(url,{
         method: "POST",
@@ -124,12 +124,11 @@ loanform.addEventListener('submit',(e)=>{
         location.reload();
     }).catch(function (error) {
         console.warn('Something went wrong.', error);
-        alert(error);
     });
 });
 bookbankform.addEventListener('submit',(e)=>{
     e.preventDefault();
-    url = "http://localhost:8000/api/bookbanks/crowdSource/";
+    url = "http://192.168.29.182:8000/api/bookbanks/crowdSource/";
     var data = getData(e.target.children[0].children[0].innerText);
     fetch(url,{
         method: "POST",
@@ -144,15 +143,14 @@ bookbankform.addEventListener('submit',(e)=>{
         return Promise.reject(response);
     }).then(function (data) {
         alert("Your data has been recorded. Thank you for the information.");
+        location.reload();
     }).catch(function (error) {
         console.warn('Something went wrong.', error);
-        alert(error);
     });
 });
 ngoform.addEventListener('submit',(e)=>{
     e.preventDefault();
-    alert("Submitting form");
-    url = "http://localhost:8000/api/ngo/crowdSource/";
+    url = "http://192.168.29.182:8000/api/ngo/crowdSource/";
     var data = getData(e.target.children[0].children[0].innerText);
     fetch(url,{
         method: "POST",
@@ -167,8 +165,8 @@ ngoform.addEventListener('submit',(e)=>{
         return Promise.reject(response);
     }).then(function (data) {
         alert("Your data has been recorded. Thank you for the information.");
+        location.reload();
     }).catch(function (error) {
         console.warn('Something went wrong.', error);
-        alert(error);
     });
 });

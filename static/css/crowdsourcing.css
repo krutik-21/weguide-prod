@@ -4,9 +4,9 @@ body {
     flex-direction: column !important;
 }
 
-/* .start {
+.start {
     flex: 1 0 auto !important;
-} */
+}
 
 .start {
     padding: 2vmin;
@@ -21,7 +21,7 @@ body {
     color: #50394c;
     font-family: Raleway;
     text-align: center;
-    margin-top: 14vmin;
+    margin-top: 18vmin;
 }
 
 .inform p{
@@ -96,7 +96,7 @@ input, textarea{
 }
 
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 960px){
     .forminput{
         width: 90%;
         padding-left: 0vmin;
@@ -106,8 +106,10 @@ input, textarea{
 
     .inform{
         margin: 2vmin;
+        margin-top: 20vmin;
     }
     .start{
+        flex: none !important;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;

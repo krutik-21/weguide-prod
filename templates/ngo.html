@@ -13,7 +13,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" /> -->
 
     <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
@@ -28,8 +28,8 @@
 
 <body>
 
-    <div class="navbar-fixed">
-        <nav class="nav-extended">
+    <div class="navbar-container">
+        <nav>
             <div class="nav-wrapper">
                 <a href="{% url 'home' %}" class="brand-logo">
                     WeGuide
@@ -37,14 +37,14 @@
                 <a href="#" class="sidenav-trigger" data-target="mobile-links">
                     <i class="material-icons">menu</i>
                 </a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" class="right menu-list hide-on-med-and-down">
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'crowdsourcing' %}">Contribute</a></li>
                     <li><a href="{% url 'faq' %}">FAQs</a></li>
                 </ul>
             </div>
             <div class="nav-content">
-                <ul class="tabs row tabs-transparent hide-on-med-and-down">
+                <ul class="tabs row hide-on-med-and-down">
                     <li class="tab col"><a href="{% url 'scholarships' %}">Scholarships</a></li>
                     <li class="tab col"><a href="{% url 'loans' %}">Loans</a></li>
                     <li class="tab col"><a href="{% url 'books' %} ">Bookbanks</a></li>
@@ -69,7 +69,7 @@
 
     <div class="card-container">
         <div class="row">
-            <div class="col l2 m3 hide-on-small-only">
+            <div class="col l2 m3 search-form" id = 'search-form'>
                 <form id="search">
                     <div class="form-group">
                         <input type="text" placeholder="Search NGOs" id="search-elem">
@@ -147,7 +147,13 @@
                 </div>
             </div>
         </div>
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large" id="search-trigger">
+                <i class="large material-icons">search</i>
+            </a>
+        </div>
     </div>
+    <div class="modal-overlay" id="backDrop"></div>
 
     <footer class="page-footer" style="background-color: #ffef96;">
         <div class="container">

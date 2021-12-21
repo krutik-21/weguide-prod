@@ -1,12 +1,13 @@
 // var url = 'https://34.86.68.175/api/bookbanks/active/?'
-var url = 'http://localhost:8000/api/bookbanks/active/?'
+var url = 'http://192.168.29.182:8000/api/bookbanks/active/?'
 var scholarships;
 var page = 1
 var modal = document.querySelector('.modal')
 var modalTitle = document.querySelector('.modal-title')
 var modalDetails = document.querySelector('.modal-body')
 var displayItems = ['updated_on', 'books', 'state', 'district', 'address', 'content', 'contact', 'site_url']
-
+var body = document.getElementsByTagName('body')
+var backDrop = document.getElementById('backDrop')
 var elem = document.querySelector('.sidenav');
 var instance = new M.Sidenav(elem);
 
@@ -16,7 +17,7 @@ getscholar(url, page = 1)
     })
 
 async function getscholar(url, page = 1) {
-    // url += `page=${page}`
+    url += `page=${page}`
     console.log(url)
     const schlist = await fetch(url)
     const resp = await schlist.json()
@@ -30,8 +31,8 @@ async function getscholar(url, page = 1) {
 
 async function getfields(url) {
 
-    var filterFields = 'https://34.86.68.175/api/bookbanks/filterFields/'
-    var filterFields = 'http://localhost:8000/api/bookbanks/filterFields/'
+    // var filterFields = 'https://34.86.68.175/api/bookbanks/filterFields/'
+    var filterFields = 'http://192.168.29.182:8000/api/bookbanks/filterFields/'
     var fields = await fetch(filterFields)
     var b = await fields.json()
 
@@ -72,7 +73,7 @@ var form = document.getElementById("filterForm");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     // url = "https://34.86.68.175/api/bookbanks/filter/?"
-    url = "http://localhost:8000/api/bookbanks/filter/?"
+    url = "http://192.168.29.182:8000/api/bookbanks/filter/?"
     var filterVal = {
         state: document.getElementById('states').value,
         district: document.getElementById('districts').value,
@@ -87,6 +88,10 @@ form.addEventListener('submit', (e) => {
     getscholar(url).catch(error => {
         console.log(error)
     })
+    if(screen.width <= 960){
+        document.getElementById('search-form').style.transform = 'translateY(100%)';
+        backDrop.setAttribute('style','display:none')
+    }
 });
 
 function createCard(resp) {
@@ -103,7 +108,7 @@ function createCard(resp) {
         for (var i = 0; i <= resp.results.length - 1; i++) {
 
             var subcont = document.createElement('div')
-            subcont.setAttribute("class", "col s6 m6 l4")
+            subcont.setAttribute("class", "col s12 m12 l4")
             main.appendChild(subcont)
 
             var card = document.createElement('div')
@@ -181,6 +186,8 @@ function createCard(resp) {
         }
         document.querySelectorAll('.modal-trigger').forEach(item => {
             item.addEventListener('click', event => {
+                body[0].setAttribute('style','overflow:hidden;')
+                backDrop.setAttribute('style','display:block; opacity:0.5')
                 modal.classList.add('modal-show')
                 var scholarshipDetail
                 for (var i = 0; i < resp.results.length; i++) {
@@ -216,6 +223,17 @@ function createCard(resp) {
 btnClose = document.getElementById('btnClose')
 btnClose.addEventListener('click', () => {
     modal.classList.remove('modal-show')
+    body[0].removeAttribute('style')
+    backDrop.setAttribute('style','display:none')
+})
+
+backDrop.addEventListener('click', () => {
+    modal.classList.remove('modal-show')
+    body[0].removeAttribute('style')
+    backDrop.setAttribute('style','display:none')
+    if(window.innerWidth <= 960){
+        document.getElementById('search-form').style.transform = 'translateY(100%)';
+    }
 })
 
 function createPagination(count) {
@@ -226,7 +244,7 @@ function createPagination(count) {
 
     if (totalPages > 0) {
         for (var i = 1; i <= totalPages; i++) {
-            btn = document.createElement('li')
+            var btn = document.createElement('li')
             btn.setAttribute('class', 'waves-effect pagebtn')
             pageCont.appendChild(btn)
             var btna = document.createElement('a')
@@ -247,7 +265,7 @@ search.addEventListener('submit', (e) => {
     e.preventDefault();
     page = 1
     // url = "https://34.86.68.175/api/bookbanks/search/?"
-    url = "http://localhost:8000/api/bookbanks/search/?"
+    url = "http://192.168.29.182:8000/api/bookbanks/search/?"
     var filterVal = {
         q: document.getElementById('search-elem').value,
     }
@@ -263,12 +281,15 @@ search.addEventListener('submit', (e) => {
     getscholar(url).catch(error => {
         console.log(error)
     })
-
+    if(window.innerWidth <= 960){
+        document.getElementById('search-form').style.transform = 'translateY(100%)';
+        backDrop.setAttribute('style','display:none')
+    }
 });
 
 async function getDistrict(state){
     // url = `https://34.86.68.175/api/bookbanks/getDistrict/?state=${state}`
-    url = `http://localhost:8000/api/bookbanks/getDistrict/?state=${state}`
+    url = `http://192.168.29.182:8000/api/bookbanks/getDistrict/?state=${state}`
     const districtList = await fetch(url)
     const resp = await districtList.json()
     try {
@@ -288,4 +309,10 @@ document.getElementById("states").addEventListener('input',()=>{
     document.getElementById('districts').innerHTML=''
     var state = document.getElementById("states").value
     getDistrict(state)
+})
+
+document.getElementById('search-trigger').addEventListener('click',()=>{
+    document.getElementById('search-form').style.transform = 'translateY(0%)';
+    body[0].setAttribute('style','overflow:hidden;')
+    backDrop.setAttribute('style','display:block; opacity:0.5')
 })

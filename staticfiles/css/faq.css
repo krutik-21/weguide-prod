@@ -9,7 +9,7 @@ body {
 }
 
 .faqcontainer{
-    margin-top: 8vmin;
+    margin-top: 16vmin;
 }
 
 .submitbtn {
@@ -51,7 +51,10 @@ body {
     font-weight: normal;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 960px) {
+    .faqcontainer{
+        margin-top: 20vmin;
+    }
     .quescont{
         padding: 0vmin 4vmin !important;
     }

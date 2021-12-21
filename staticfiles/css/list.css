@@ -8,7 +8,7 @@ select{
 
 .card-container{
     position: relative;
-    margin-top: 5vmin;
+    margin-top: 17vmin !important;
     font-family: Poppins;
 }
 
@@ -100,10 +100,6 @@ a.pageBtn{
 }
 
 .searchbtn {
-    height: 5vmin;
-    width: 13vmin;
-    font-size: 2vmin;
-    line-height: 5vmin;
     background-color: #b5e1e2;
     color: #50394c;
 }
@@ -121,12 +117,14 @@ a.pageBtn{
     display: flex;
     z-index: -1;
     visibility: hidden;
-    transition: all .2s linear;
+    transition: opacity .01s linear;
 }
 
 .modal-show {
-    z-index: 100;
+    z-index: 1003;
     visibility: visible;
+    opacity: 1;
+    transition: 0.2s;
 }
 
 .modal-trigger{
@@ -136,11 +134,15 @@ a.pageBtn{
     margin: 0 !important;
 }
 
+modal-overlay{
+    z-index: 1002;
+    opacity: 0.3;
+    width: 100vw;
+    background-color: black;
+}
+
 .submitbtn{
-    height: 5vmin;
-    width: 13vmin;
-    font-size: 2vmin;
-    line-height: 5vmin;
+    margin-top: 1.5vmin;
     background-color: #b5e1e2;
     color: #50394c;
 }
@@ -157,10 +159,14 @@ a.pageBtn{
     background-color: #b5e1e2;
 }
 
-@media only screen and (max-width: 768px) {
-    /* a.pageBtn{
+.fixed-action-btn{
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 960px) {
+    a.pageBtn{
         width: 8vmin;
-    } */
+    }
 
     .row,.col{
         float: none !important;
@@ -171,14 +177,59 @@ a.pageBtn{
     }
 
     .cardtitle {
-        padding: 2vmin;
-        margin-bottom: 3vmin;
-        border-bottom: 0.2vmin solid #e2e2e2;
-        line-height: 3.7vmin;
-        font-size: 2.5vmin;
+        padding: 3vmin !important;
+        margin-bottom: 3vmin !important;
+        border-bottom: 0.2vmin solid #e2e2e2 !important;
+        line-height: 3.7vmin !important;
+        font-size: 4vmin !important;
         font-family: Raleway !important;
         background-color: #b5e1e2;
         text-transform: capitalize !important;
         color: #50394c !important;
     }
+
+    p{
+        font-size: 15px !important;
+        margin-bottom: 2vmin !important;
+    }
+
+    .card-action a{
+        font-size: 4vmin;
+    }
+
+    .fixed-action-btn{
+        visibility: visible;
+    }
+
+    .btn-floating{
+        background-color: #ffef96;
+    }
+
+    .btn-floating:hover{
+        background-color: #ffef96;
+    }
+
+    .btn-floating i{
+        color: #50394c;
+    }
+
+    .search-form {
+        position: fixed;
+        width: 100% !important;
+        height: 50vh;
+        bottom: 0;
+        margin: 0;
+        background-color: #eedf8b;
+        z-index: 1002;
+        padding: 5vmin !important;
+        overflow-y: auto;
+        transform: translateY(100%);
+        transition: transform 0.25s linear;
+    }
+
+    ::placeholder{
+        color: #50394c;
+        opacity: 0.3;
+    }
+    
 }
