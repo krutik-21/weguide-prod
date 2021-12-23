@@ -1,5 +1,5 @@
 .intro-container {
-    margin-top: 10vmin;
+    margin-top: 20vmin;
     height: 60vh;
     width: 100%;
     background-color: #b5e1e2;
@@ -180,15 +180,15 @@ hr {
     border: 0.1vmin solid black;
 }*/
 
-@media only screen and (max-width: 414px) {
-    .intro-container {
+@media only screen and (max-width: 960px) {
+    /* .intro-container {
         height: 60vh;
-    }
+    } */
     .intro-text,
     .intro-img {
         position: relative;
         top: 33%;
-    }
+    }  
     /*.card-container {
         width: 95%;
     }

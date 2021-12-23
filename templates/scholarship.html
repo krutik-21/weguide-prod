@@ -13,7 +13,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" /> -->
 
     <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
@@ -23,7 +23,7 @@
     <link href="{% static 'css/footer.css' %}" rel="stylesheet">
     <link href="{% static 'css/list.css' %}" rel="stylesheet">
 
-    <title>Yellow Pages - Scholarships</title>
+    <title>WeGuide - Scholarships</title>
 </head>
 
 <body>
@@ -31,32 +31,43 @@
     <div class="navbar-container">
         <nav>
             <div class="nav-wrapper">
-                <a href="{% url 'home' %}" class="left brand-logo">
+                <a href="{% url 'home' %}" class="brand-logo">
                     WeGuide
                 </a>
-                <ul id="nav-mobile" class="right menu-list">
+                <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul id="nav-mobile" class="right menu-list hide-on-med-and-down">
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'crowdsourcing' %}">Contribute</a></li>
                     <li><a href="{% url 'faq' %}">FAQs</a></li>
                 </ul>
             </div>
             <div class="nav-content">
-                <ul class="tabs row">
-                    <li class="tab col l2 s0"></li>
-                    <li class="tab col l2 s3 active"><a href="{% url 'scholarships' %}">Scholarships</a></li>
-                    <li class="tab col l2 s3"><a href="{% url 'loans' %}">Loans</a></li>
-                    <li class="tab col l2 s3"><a href="{% url 'books' %} ">Bookbanks</a></li>
-                    <li class="tab col l2 s3"><a href="{% url 'ngos' %}">NGOs</a></li>
-                    <li class="tab col l2 s0"></li>
+                <ul class="tabs row hide-on-med-and-down">
+                    <li class="tab col active"><a href="{% url 'scholarships' %}">Scholarships</a></li>
+                    <li class="tab col"><a href="{% url 'loans' %}">Loans</a></li>
+                    <li class="tab col"><a href="{% url 'books' %} ">Bookbanks</a></li>
+                    <li class="tab col"><a href="{% url 'ngos' %}">NGOs</a></li>
                 </ul>
             </div>
         </nav>
     </div>
-
+    <ul class="sidenav" id="mobile-links">
+        <li><a href="{% url 'home' %}">WeGuide</a></li>
+        <li class="divider brown"></li>
+        <li class="active"><a href="{% url 'scholarships' %}">Scholarships</a></li>
+        <li><a href="{% url 'loans' %}">Loans</a></li>
+        <li><a href="{% url 'books' %}">Bookbanks</a></li>
+        <li><a href="{% url 'ngos' %}">NGOs</a></li>
+        <li class="divider brown" tabindex="-1"></li>
+        <li><a href="{% url 'crowdsourcing' %}">Contribute</a></li>
+        <li><a href="{% url 'faq' %}">FAQs</a></li>
+    </ul>
 
     <div class="card-container">
         <div class="row">
-            <div class="col l2 m3 hide-on-small-only">
+            <div class="col l2 m3 search-form" id="search-form">
                 <form id="search">
                     <div class="form-group">
                         <input type="text" placeholder="Search Scholarships" id="search-elem">
@@ -123,15 +134,15 @@
                     </div>
                 </div>
 
-                <div class="row col l10 m9" id="maincontainer">
+                <div class="row col l10 m9 s12" id="maincontainer">
                     <!-- <div class="col s12 m12 l4">
                         <div class="card">
-                            <div class="card-content">
-                                <span id="cardtitle" class="card-title black-text"></span>
-                                <div class="row" id="content"> 
-                                    <img src="" id="cardimg" class="col s4 m4 l4 offset-m4 offset-s4">
-                                    <p class="cardaward"></p>
-                                </div>
+                        <div class="card-content">
+                            <span id="cardtitle" class="card-title black-text"></span>
+                            <div class="row" id="content"> 
+                                <img src="" id="cardimg" class="col s4 m4 l4 offset-m4 offset-s4">
+                                <p class="cardaward"></p>
+                            </div>
                                 <p class="truncate updated"></p>
                                 <br>
                                 <p id="deadline" class="truncate"></p>
@@ -144,8 +155,14 @@
                 </div>
             </div>
         </div>
+        
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large" id="search-trigger">
+                <i class="large material-icons">search</i>
+            </a>
+        </div>
     </div>
-
+    <div class="modal-overlay" id="backDrop"></div>
 
     <footer class="page-footer" style="background-color: #f4e1d2;">
         <div class="container">
@@ -174,7 +191,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{% static 'js/Scholarships.js' %}"></script>
 </body>
 

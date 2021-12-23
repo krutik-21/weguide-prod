@@ -51,12 +51,23 @@ body {
     font-weight: normal;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 960px) {
+    .faqcontainer{
+        margin-top: 20vmin;
+    }
     .quescont{
-        padding-left: 2vmin !important;
-        padding-right: 2vmin !important;
+        padding: 0vmin 4vmin !important;
     }
     .quescont h5, .quescont p{
         text-align: center;
+    }
+
+    .collapsible-header{
+        font-size: 3.5vmin;
+    }
+
+    .collapsible-body{
+        font-size: 3.3vmin;
+        padding: 15px;
     }
 }
