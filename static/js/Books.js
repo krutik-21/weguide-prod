@@ -1,5 +1,5 @@
 // var url = 'https://34.86.68.175/api/bookbanks/active/?'
-var url = 'http://192.168.29.182:8000/api/bookbanks/active/?'
+var url = 'http://192.168.29.172:8000/api/bookbanks/active/?'
 var scholarships;
 var page = 1
 var modal = document.querySelector('.modal')
@@ -32,7 +32,7 @@ async function getscholar(url, page = 1) {
 async function getfields(url) {
 
     // var filterFields = 'https://34.86.68.175/api/bookbanks/filterFields/'
-    var filterFields = 'http://192.168.29.182:8000/api/bookbanks/filterFields/'
+    var filterFields = 'http://192.168.29.172:8000/api/bookbanks/filterFields/'
     var fields = await fetch(filterFields)
     var b = await fields.json()
 
@@ -73,7 +73,7 @@ var form = document.getElementById("filterForm");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     // url = "https://34.86.68.175/api/bookbanks/filter/?"
-    url = "http://192.168.29.182:8000/api/bookbanks/filter/?"
+    url = "http://192.168.29.172:8000/api/bookbanks/filter/?"
     var filterVal = {
         state: document.getElementById('states').value,
         district: document.getElementById('districts').value,
@@ -91,6 +91,7 @@ form.addEventListener('submit', (e) => {
     if(screen.width <= 960){
         document.getElementById('search-form').style.transform = 'translateY(100%)';
         backDrop.setAttribute('style','display:none')
+        body[0].removeAttribute('style')
     }
 });
 
@@ -265,7 +266,7 @@ search.addEventListener('submit', (e) => {
     e.preventDefault();
     page = 1
     // url = "https://34.86.68.175/api/bookbanks/search/?"
-    url = "http://192.168.29.182:8000/api/bookbanks/search/?"
+    url = "http://192.168.29.172:8000/api/bookbanks/search/?"
     var filterVal = {
         q: document.getElementById('search-elem').value,
     }
@@ -284,12 +285,13 @@ search.addEventListener('submit', (e) => {
     if(window.innerWidth <= 960){
         document.getElementById('search-form').style.transform = 'translateY(100%)';
         backDrop.setAttribute('style','display:none')
+        body[0].removeAttribute('style')
     }
 });
 
 async function getDistrict(state){
     // url = `https://34.86.68.175/api/bookbanks/getDistrict/?state=${state}`
-    url = `http://192.168.29.182:8000/api/bookbanks/getDistrict/?state=${state}`
+    url = `http://192.168.29.172:8000/api/bookbanks/getDistrict/?state=${state}`
     const districtList = await fetch(url)
     const resp = await districtList.json()
     try {

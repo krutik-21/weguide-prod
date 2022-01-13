@@ -1,4 +1,4 @@
-var url = 'http://192.168.29.182:8000/api/scholarship/active/?'
+var url = 'http://192.168.29.172:8000/api/scholarship/active/?'
 // var url = 'https://34.86.68.175/api/scholarship/active/?'
 var scholarships;
 var page = 1
@@ -31,7 +31,7 @@ async function getscholar(url, page = 1) {
 async function getfields(url) {
 
     // var filterFields = 'https://34.86.68.175/api/scholarship/filterFields/'
-    var filterFields = 'http://192.168.29.182:8000/api/scholarship/filterFields/'
+    var filterFields = 'http://192.168.29.172:8000/api/scholarship/filterFields/'
     var fields = await fetch(filterFields)
     var b = await fields.json()
 
@@ -97,7 +97,7 @@ var form = document.getElementById("filterForm");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     // url = "https://34.86.68.175/api/scholarship/filter/?"
-    url = "http://192.168.29.182:8000/api/scholarship/filter/?"
+    url = "http://192.168.29.172:8000/api/scholarship/filter/?"
     var filterVal = {
         state: document.getElementById('states').value,
         category: document.getElementById('categories').value,
@@ -120,6 +120,7 @@ form.addEventListener('submit', (e) => {
     if(window.innerWidth <= 960){
         document.getElementById('search-form').style.transform = 'translateY(100%)'
         backDrop.setAttribute('style','display:none')
+        body[0].removeAttribute('style')
     }
 });
 
@@ -301,7 +302,7 @@ search.addEventListener('submit', (e) => {
     e.preventDefault();
     page = 1
     // url = "https://34.86.68.175/api/scholarship/search/?"
-    url = "http://192.168.29.182:8000/api/scholarship/search/?"
+    url = "http://192.168.29.172:8000/api/scholarship/search/?"
     var filterVal = {
         q: document.getElementById('search-elem').value,
     }
@@ -320,12 +321,13 @@ search.addEventListener('submit', (e) => {
     if(window.innerWidth <= 960){
         document.getElementById('search-form').style.transform = 'translateY(100%)'
         backDrop.setAttribute('style','display:none')
+        body[0].removeAttribute('style')
     }
 });
 
 async function getState(country){
     // url = 'https://34.86.68.175/api/scholarship/getState/?country=${country}'
-    url = 'http://192.168.29.182:8000/api/scholarship/getState/?country=${country}'
+    url = 'http://192.168.29.172:8000/api/scholarship/getState/?country=${country}'
     const stateList = await fetch(url)
     const resp = await stateList.json()
     console.log(resp)
