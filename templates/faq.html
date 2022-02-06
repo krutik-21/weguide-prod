@@ -16,6 +16,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link href="{% static 'css/navbar.css' %}" rel="stylesheet">
     <link href="{% static 'css/footer.css' %}" rel="stylesheet">
@@ -64,40 +65,41 @@
 
     <div class="faqcontainer">
         <div class="row">
-            <div class="col l2 hide-on-med-and-down">
+            <div class="col l2 filterForm" id ="filterForm">
                 <p style="color: #50394c;">Category</p>
-                <form action="#">
+                <form id="filter">
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name = 'choice' id="schol" value="schol"/>
                             <span>Scholarships</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="choice" id="loan" value="loan" />
                             <span>Loans</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="choice" id="book" value="book"/>
                             <span>Books</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="choice" id="aboutus" value="aboutus"/>
                             <span>About us</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" name="choice" id="guidance" value="guidance"/>
                             <span>Guidance</span>
                         </label>
                     </p>
-                    <input type="submit" class="waves-effect waves-light btn submitbtn" value="Apply"></a>
+                    <button type="button" class="waves-effect waves-light btn submitbtn" value="Apply">Apply</button>
+                </form>
             </div>
             <div class="quescont col l10 m12 s12">
                 <h5>Frequently Asked Questions</h5>
@@ -105,30 +107,58 @@
                     career options
                 </p>
                 <ul class="collapsible expandable">
-                    <li>
-                        <div class="collapsible-header">First</div>
+                    <li class="schol">
+                        <div class="collapsible-header">Scholarship</div>
                         <div class="collapsible-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris nisi ut aliquip ex ea commodo consequat.
                         </div>
                     </li>
-                    <li>
-                        <div class="collapsible-header">Second</div>
+                    <li class="aboutus">
+                        <div class="collapsible-header">About Us</div>
                         <div class="collapsible-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris nisi ut aliquip ex ea commodo consequat</div>
                     </li>
-                    <li>
-                        <div class="collapsible-header">Third</div>
+                    <li class="loan">
+                        <div class="collapsible-header">Loan</div>
                         <div class="collapsible-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris nisi ut aliquip ex ea commodo consequat.></div>
                     </li>
-                    <li>
-                        <div class="collapsible-header">Fourth</div>
+                    <li class="book">
+                        <div class="collapsible-header">Books</div>
+                        <div class="collapsible-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.></div>
+                    </li>
+                    <li class="guidance">
+                        <div class="collapsible-header">Guidance</div>
+                        <div class="collapsible-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.></div>
+                    </li>
+                    <li class="guidance">
+                        <div class="collapsible-header">Guidance</div>
+                        <div class="collapsible-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.></div>
+                    </li>
+                    <li class="book">
+                        <div class="collapsible-header">Book</div>
+                        <div class="collapsible-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.></div>
+                    </li>
+                    <li class="schol">
+                        <div class="collapsible-header">Scholarship</div>
                         <div class="collapsible-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -138,32 +168,13 @@
             </div>
         </div>
     </div>
-
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12 leftcontent center">
-                    <h5 class="foot-head">WeGuide</h5>
-                    <p class="foot-text">
-                        An initiative by TMM
-                    </p>
-                </div>
-                <div class="col l4 offset-l2 s12 foot-link center">
-                    <ul>
-                        <li><a href="#!">About</a></li>
-                        <li><a href="#!">Testimonials</a></li>
-                        <li><a href="#!">Contact us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                ©WeGuide 2021. All rights reserved.
-                <a class="right" href="{% url 'crowdsourcing' %}">Contribute to our cause</a>
-            </div>
-        </div>
-    </footer>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large" id="search-trigger">
+            <i class="large material-icons">filter_alt</i>
+        </a>
+    </div>
+    <div class="modal-overlay" id="backDrop"></div>
+    {% include 'footer.html' %}
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

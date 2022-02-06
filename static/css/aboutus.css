@@ -1,0 +1,28 @@
+.info{
+    margin-top: 20vmin;
+    font-family: 'Raleway' !important;
+    padding: 5%;
+}
+
+.pointer{
+    list-style-type: disc !important;
+    margin-left: 5vmin;
+}
+
+.heading{
+    font-size: 7.5vh;
+}
+
+.detail{
+    font-size: 2.5vh;
+}
+
+@media only screen and (max-width: 960px){
+    .heading{
+        font-size: 7.5vw;
+    }
+
+    .detail{
+        font-size: 2.5vw;
+    }
+}

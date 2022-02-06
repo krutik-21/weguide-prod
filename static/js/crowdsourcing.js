@@ -83,7 +83,7 @@ ngoform = document.getElementById("crowdsource-ngo");
 
 scholform.addEventListener('submit',(e)=>{
     e.preventDefault();
-    url = "http://192.168.29.172:8000/api/scholarship/crowdSource/";
+    url = "http://192.168.29.172:3587/api/scholarship/crowdSource/";
     var data = getData(e.target.children[0].children[0].innerText);
     fetch(url,{
         method: "POST",
@@ -106,7 +106,7 @@ scholform.addEventListener('submit',(e)=>{
 
 loanform.addEventListener('submit',(e)=>{
     e.preventDefault();
-    url = "http://192.168.29.172:8000/api/loans/crowdSource/";
+    url = "http://192.168.29.172:3587/api/loans/crowdSource/";
     var data = getData(e.target.children[0].children[0].innerText);
     fetch(url,{
         method: "POST",
@@ -128,7 +128,7 @@ loanform.addEventListener('submit',(e)=>{
 });
 bookbankform.addEventListener('submit',(e)=>{
     e.preventDefault();
-    url = "http://192.168.29.172:8000/api/bookbanks/crowdSource/";
+    url = "http://192.168.29.172:3587/api/bookbanks/crowdSource/";
     var data = getData(e.target.children[0].children[0].innerText);
     fetch(url,{
         method: "POST",
@@ -150,7 +150,7 @@ bookbankform.addEventListener('submit',(e)=>{
 });
 ngoform.addEventListener('submit',(e)=>{
     e.preventDefault();
-    url = "http://192.168.29.172:8000/api/ngo/crowdSource/";
+    url = "http://192.168.29.172:3587/api/ngo/crowdSource/";
     var data = getData(e.target.children[0].children[0].innerText);
     fetch(url,{
         method: "POST",

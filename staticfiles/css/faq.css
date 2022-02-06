@@ -9,13 +9,10 @@ body {
 }
 
 .faqcontainer{
-    margin-top: 16vmin;
+    margin-top: 18vmin;
 }
 
 .submitbtn {
-    height: 5vmin;
-    width: 13vmin;
-    font-size: 2vmin;
     line-height: 5vmin;
     background-color: #b5e1e2;
     color: #50394c !important;
@@ -51,6 +48,14 @@ body {
     font-weight: normal;
 }
 
+.remove{
+    display: none;
+}
+
+.fixed-action-btn{
+    visibility: hidden;
+}
+
 @media only screen and (max-width: 960px) {
     .faqcontainer{
         margin-top: 20vmin;
@@ -69,5 +74,35 @@ body {
     .collapsible-body{
         font-size: 3.3vmin;
         padding: 15px;
+    }
+
+    .fixed-action-btn{
+        visibility: visible;
+    }
+
+    .btn-floating{
+        background-color: #ffef96;
+    }
+
+    .btn-floating:hover{
+        background-color: #ffef96;
+    }
+
+    .btn-floating i{
+        color: #50394c;
+    }
+
+    .filterForm {
+        position: fixed;
+        width: 100% !important;
+        height: 50vh;
+        bottom: 0;
+        margin: 0;
+        background-color: #eedf8b;
+        z-index: 1002;
+        padding: 5vmin !important;
+        overflow-y: auto;
+        transform: translateY(100%);
+        transition: transform 0.25s linear;
     }
 }

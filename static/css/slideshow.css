@@ -1,6 +1,5 @@
 .intro {
-    position: relative;
-    top: 7vmin;
+    margin-top: 10vmin;
 }
 
 .mySlides {
@@ -10,16 +9,16 @@
 .mySlides img {
     vertical-align: middle;
     border-radius: 5vmin;
+    height: 70vh;
 }
 
 
 /* Slideshow container */
 
 .slideshow-container {
-    max-width: 80%;
+    max-width: 95%;
     position: relative;
-    left: 50%;
-    transform: translate(-50%);
+    margin: 0 auto;
 }
 
 
@@ -199,7 +198,7 @@
 
 /* On smaller screens, decrease text size */
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 960px) {
     .prev,
     .next,
     .text {
@@ -209,4 +208,16 @@
     .next:hover {
         background: none;
     }
+
+    .mySlides img {
+        height: 40vh;
+    }
+
+    .text1,
+.text2,
+.text3,
+.text4,
+.text5 {
+    font-size: 5vw;
+}
 }

@@ -1,21 +1,19 @@
-.intro-container {
+.intro-container{
     margin-top: 20vmin;
-    height: 60vh;
+    height: fit-content;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5%;
     background-color: #b5e1e2;
     border-bottom: 0.3vmin solid #b1b1b1;
     font-family: Raleway;
 }
 
-.intro-text,
-.intro-img {
-    position: relative;
-    top: 50%;
-    transform: translate(0, -50%);
-}
-
 .intro-img img {
-    width: 100%;
+    width: 45vw;
     padding: 2vmin !important;
     height: auto;
 }
@@ -35,17 +33,13 @@
     font-family: Poppins;
 }
 
-/*.section-head {
+.section-head {
     text-align: center;
-    position: relative;
-    top: 10vmin;
     font-size: 5vmin;
     font-weight: bold;
 }
 
 hr {
-    position: relative;
-    top: 8vmin;
     height: 0.3vmin;
     width: 5%;
     border-width: 0;
@@ -55,29 +49,27 @@ hr {
 
 .service-text {
     text-align: center;
-    width: 70%;
-    position: relative;
-    top: 11vmin;
-    left: 50%;
-    transform: translate(-50%);
+    padding: 5vmin 15vmin;
     color: rgb(100, 100, 100);
 }
 
 .card-container {
-    width: 75%;
-    position: relative;
-    top: 15vmin;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 2vh auto;
 }
 
 .service-card {
-    width: 45vmin;
-    height: 40vmin;
+    width: 30%;
+    height: fit-content;
     box-shadow: 12px 12px 5px rgb(247, 247, 247);
     border-radius: 3vmin;
 }
 
 .card-image img {
-    height: 15vmin;
+    height: 25vmin;
 }
 
 .card-head {
@@ -94,13 +86,10 @@ hr {
 }
 
 .service-btn {
-    width: 25vmin;
+    width: 20vw;
     height: 7vmin;
     line-height: 7vmin;
-    position: relative;
-    top: 15vmin;
-    left: 50%;
-    transform: translate(-50%);
+    margin: 3vh 39vw;
     background-color: white;
     border: 0.1vmin solid #ffca00;
     border-radius: 5vmin;
@@ -118,25 +107,17 @@ hr {
     border: 0.1vmin solid black;
 }
 
-.test-head {
-    top: 20vmin;
-    position: relative;
-}
-
-.test-line {
-    position: relative;
-    top: 18vmin;
-}
-
 .test-card-container {
-    width: 75%;
-    position: relative;
-    top: 25vmin;
+    width: 90%;
+    margin: 5vh auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .test-card {
-    width: 45vmin;
-    height: 50vmin;
+    width: 27%;
+    /* height: 50vmin; */
     box-shadow: 12px 12px 5px rgb(247, 247, 247);
     border-radius: 3vmin;
 }
@@ -151,13 +132,10 @@ hr {
 }
 
 .test-btn {
-    width: 25vmin;
+    width: 20vw;
     height: 7vmin;
     line-height: 7vmin;
-    position: relative;
-    top: 30vmin;
-    left: 50%;
-    transform: translate(-50%);
+    margin: 3vh 39vw;
     background-color: white;
     border: 0.1vmin solid #ffca00;
     border-radius: 5vmin;
@@ -178,39 +156,40 @@ hr {
 .test-btn:active {
     color: black;
     border: 0.1vmin solid black;
-}*/
+}
 
 @media only screen and (max-width: 960px) {
-    /* .intro-container {
-        height: 60vh;
-    } */
-    .intro-text,
-    .intro-img {
-        position: relative;
-        top: 33%;
-    }  
-    /*.card-container {
+    .intro-container {
+        flex-direction: column;
+        padding: 5%;
+    }
+    .intro-img img{
+        width: 90vw;
+    }
+    .card-container {
         width: 95%;
     }
     .service-card {
         margin: 0;
         padding: 0;
-        width: 25vmin;
-        height: 25vmin;
+    }
+    .service-btn, .test-btn{
+        width: 30vw;
+        margin: 3vh 34vw;
     }
     .card-head {
         margin: 3vmin;
     }
-    .card-content {
+    .service-card-content {
         display: none;
     }
     .test-card-container {
         width: 95%;
+        flex-direction: column;
     }
     .test-card {
-        margin: 0;
+        width: 75%;
+        margin: 2vh auto;
         padding: 0;
-        width: 32vmin;
-        height: 25vmin;
-    }*/
+    }
 }

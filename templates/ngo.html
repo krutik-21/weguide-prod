@@ -155,31 +155,7 @@
     </div>
     <div class="modal-overlay" id="backDrop"></div>
 
-    <footer class="page-footer" style="background-color: #ffef96;">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12 leftcontent center">
-                    <h5 class="foot-head">WeGuide</h5>
-                    <p class="foot-text">
-                        An initiative by TMM
-                    </p>
-                </div>
-                <div class="col l4 offset-l2 s12 foot-link center">
-                    <ul>
-                        <li><a href="#!">About</a></li>
-                        <li><a href="#!">Testimonials</a></li>
-                        <li><a href="#!">Contact us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                ©WeGuide 2021. All rights reserved.
-                <a class="right" href="{% url 'crowdsourcing' %}">Contribute to our cause</a>
-            </div>
-        </div>
-    </footer>
+    {% include 'footer.html' %}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 

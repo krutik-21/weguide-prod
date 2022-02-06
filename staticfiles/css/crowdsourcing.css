@@ -80,6 +80,8 @@ body {
 }
 
 .submitbtn{
+    background-color: #b5e1e2;
+    color: #50394c;
     position: relative;
     left: 50%;
     transform: translate(-50%);
@@ -122,8 +124,8 @@ input, textarea{
 
     .optbtn{
         width: 100%;
-        height: 150%;
-        font-size: 85%;
+        height: 10vmin;
+        font-size: 3vmin;
         margin-left: 0.5vmin;
         margin-right: 0.5vmin;
     }
@@ -141,5 +143,7 @@ input, textarea{
     .submitbtn{
         width: 50%;
         padding-bottom: 3vmin;
+        font-size: 3.5vmin;
+        line-height: 3;
     }
 }

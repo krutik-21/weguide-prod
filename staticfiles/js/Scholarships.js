@@ -1,4 +1,4 @@
-var url = 'http://192.168.29.172:8000/api/scholarship/active/?'
+var url = 'http://192.168.29.172:3587/api/scholarship/active/?'
 // var url = 'https://34.86.68.175/api/scholarship/active/?'
 var scholarships;
 var page = 1
@@ -31,7 +31,7 @@ async function getscholar(url, page = 1) {
 async function getfields(url) {
 
     // var filterFields = 'https://34.86.68.175/api/scholarship/filterFields/'
-    var filterFields = 'http://192.168.29.172:8000/api/scholarship/filterFields/'
+    var filterFields = 'http://192.168.29.172:3587/api/scholarship/filterFields/'
     var fields = await fetch(filterFields)
     var b = await fields.json()
 
@@ -47,12 +47,12 @@ async function getfields(url) {
         console.log(error)
     }
 
-    /* var state = document.getElementById('states')
+    var state = document.getElementById('states')
     for (var i = 0; i < b['state'].length; i++) {
         var option = document.createElement('option')
         option.innerHTML = b['state'][i].name
         state.appendChild(option)
-    } */
+    } 
     var category = document.getElementById('categories')
     for (var i = 0; i < b['category'].length; i++) {
         var option = document.createElement('option')
@@ -97,7 +97,7 @@ var form = document.getElementById("filterForm");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     // url = "https://34.86.68.175/api/scholarship/filter/?"
-    url = "http://192.168.29.172:8000/api/scholarship/filter/?"
+    url = "http://192.168.29.172:3587/api/scholarship/filter/?"
     var filterVal = {
         state: document.getElementById('states').value,
         category: document.getElementById('categories').value,
@@ -133,6 +133,7 @@ function createCard(resp) {
     if (resp.results.length == 0) {
         main.innerHTML = 'Oops! Nothing to show!'
         main.style.textAlign = 'center'
+        main.style.height = '100vh'
     }
     else {
         for (var i = 0; i <= resp.results.length - 1; i++) {
@@ -248,7 +249,15 @@ function createCard(resp) {
                     }
                     details.appendChild(dethead)
                     var deets = document.createElement('span')
-                    deets.innerHTML = scholarshipDetail[displayItems[j]]
+                    if(displayItems[j] == 'site_url'){
+                        var link = document.createElement('a')
+                        link.setAttribute('href',scholarshipDetail[displayItems[j]])
+                        link.setAttribute('target','_blank')
+                        link.innerHTML = scholarshipDetail[displayItems[j]]
+                        deets.appendChild(link)
+                    }else{
+                        deets.innerHTML = scholarshipDetail[displayItems[j]]
+                    }
                     details.appendChild(deets)
                     modalDetails.appendChild(details)
                 }
@@ -302,7 +311,7 @@ search.addEventListener('submit', (e) => {
     e.preventDefault();
     page = 1
     // url = "https://34.86.68.175/api/scholarship/search/?"
-    url = "http://192.168.29.172:8000/api/scholarship/search/?"
+    url = "http://192.168.29.172:3587/api/scholarship/search/?"
     var filterVal = {
         q: document.getElementById('search-elem').value,
     }
@@ -327,7 +336,7 @@ search.addEventListener('submit', (e) => {
 
 async function getState(country){
     // url = 'https://34.86.68.175/api/scholarship/getState/?country=${country}'
-    url = 'http://192.168.29.172:8000/api/scholarship/getState/?country=${country}'
+    url = 'http://192.168.29.172:3587/api/scholarship/getState/?country=${country}'
     const stateList = await fetch(url)
     const resp = await stateList.json()
     console.log(resp)

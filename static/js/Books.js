@@ -1,5 +1,5 @@
 // var url = 'https://34.86.68.175/api/bookbanks/active/?'
-var url = 'http://192.168.29.172:8000/api/bookbanks/active/?'
+var url = 'http://192.168.29.172:3587/api/bookbanks/active/?'
 var scholarships;
 var page = 1
 var modal = document.querySelector('.modal')
@@ -32,7 +32,7 @@ async function getscholar(url, page = 1) {
 async function getfields(url) {
 
     // var filterFields = 'https://34.86.68.175/api/bookbanks/filterFields/'
-    var filterFields = 'http://192.168.29.172:8000/api/bookbanks/filterFields/'
+    var filterFields = 'http://192.168.29.172:3587/api/bookbanks/filterFields/'
     var fields = await fetch(filterFields)
     var b = await fields.json()
 
@@ -73,7 +73,7 @@ var form = document.getElementById("filterForm");
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     // url = "https://34.86.68.175/api/bookbanks/filter/?"
-    url = "http://192.168.29.172:8000/api/bookbanks/filter/?"
+    url = "http://192.168.29.172:3587/api/bookbanks/filter/?"
     var filterVal = {
         state: document.getElementById('states').value,
         district: document.getElementById('districts').value,
@@ -104,6 +104,7 @@ function createCard(resp) {
     if (resp.results.length == 0) {
         main.innerHTML = 'Oops! Nothing to show!'
         main.style.textAlign = 'center'
+        main.style.height = '100vh';
     }
     else {
         for (var i = 0; i <= resp.results.length - 1; i++) {
@@ -212,7 +213,15 @@ function createCard(resp) {
                     dethead.innerHTML = `${displayItems[j]}: `
                     details.appendChild(dethead)
                     var deets = document.createElement('span')
-                    deets.innerHTML = scholarshipDetail[displayItems[j]]
+                    if(displayItems[j] == 'site_url'){
+                        var link = document.createElement('a')
+                        link.setAttribute('href',scholarshipDetail[displayItems[j]])
+                        link.setAttribute('target','_blank')
+                        link.innerHTML = scholarshipDetail[displayItems[j]]
+                        deets.appendChild(link)
+                    }else{
+                        deets.innerHTML = scholarshipDetail[displayItems[j]]
+                    }
                     details.appendChild(deets)
                     modalDetails.appendChild(details)
                 }
@@ -266,7 +275,7 @@ search.addEventListener('submit', (e) => {
     e.preventDefault();
     page = 1
     // url = "https://34.86.68.175/api/bookbanks/search/?"
-    url = "http://192.168.29.172:8000/api/bookbanks/search/?"
+    url = "http://192.168.29.172:3587/api/bookbanks/search/?"
     var filterVal = {
         q: document.getElementById('search-elem').value,
     }
@@ -291,7 +300,7 @@ search.addEventListener('submit', (e) => {
 
 async function getDistrict(state){
     // url = `https://34.86.68.175/api/bookbanks/getDistrict/?state=${state}`
-    url = `http://192.168.29.172:8000/api/bookbanks/getDistrict/?state=${state}`
+    url = `http://192.168.29.172:3587/api/bookbanks/getDistrict/?state=${state}`
     const districtList = await fetch(url)
     const resp = await districtList.json()
     try {

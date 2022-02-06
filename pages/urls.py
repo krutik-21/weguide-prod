@@ -9,5 +9,6 @@ urlpatterns = [
     path('faq/',TemplateView.as_view(template_name ="faq.html"),name = 'faq'),
     path('loans/',TemplateView.as_view(template_name ="loans.html"),name = 'loans'),
     path('crowdsourcing/',TemplateView.as_view(template_name ="crowdsourcing.html"),name = 'crowdsourcing'),
+    path('aboutus/',TemplateView.as_view(template_name ="aboutus.html"),name = 'about'),
 
 ]

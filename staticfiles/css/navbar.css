@@ -12,6 +12,7 @@
     background-color: #ffef96e0 !important;
     font-family: 'Raleway' !important;
     margin: 0 !important;
+    width: 70%;
 }
 
 
@@ -104,5 +105,18 @@ nav {
 
     .nav-content{
         display: none;
+    }
+    i{
+        font-size: 5vmin !important;
+        line-height: 15vmin !important;
+    }
+    #search-trigger{
+        height:15vmin;
+        width: 15vmin;
+    }
+    .sidenav li>a{
+        height: 8vh;
+        line-height: 8vh;
+        font-size: 2vh;
     }
 }
