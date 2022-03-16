@@ -1,5 +1,5 @@
 var url = 'http://192.168.29.172:3587/api/scholarship/active/?'
-// var url = 'https://34.86.68.175/api/scholarship/active/?'
+// var url = 'https://weguide.in/api/scholarship/active/?'
 var scholarships;
 var page = 1
 var modal = document.querySelector('.modal')
@@ -10,6 +10,9 @@ var body = document.getElementsByTagName('body')
 var backDrop = document.getElementById('backDrop')
 var elem = document.querySelector('.sidenav');
 var instance = new M.Sidenav(elem);
+
+document.getElementById('scholarship').classList.add('active')
+document.getElementById('scholarshipMobile').classList.add('active')
 
 getscholar(url, page = 1)
     .catch(error => {
@@ -193,14 +196,24 @@ function createCard(resp) {
 
             cardcontent.appendChild(document.createElement('br'))
 
-            var deadline = document.createElement('p')
-            deadline.setAttribute("class", "truncate cont3")
-            deadline.innerHTML = `Deadline : ${resp.results[i].deadline}`
-            cardcontent.appendChild(deadline)
+            // var deadline = document.createElement('p')
+            // deadline.setAttribute("class", "truncate cont3")
+            // deadline.innerHTML = `Deadline : ${resp.results[i].deadline}`
+            // cardcontent.appendChild(deadline)
+
+            // if (resp.results[i].deadline == null) {
+            //     deadline.innerHTML = "Deadline : Information not available"
+            //     cardcontent.appendChild(deadline)
+            // }
+
+            var updated_on = document.createElement('p')
+            updated_on.setAttribute("class", "truncate cont3")
+            updated_on.innerHTML = `Updated On : ${resp.results[i].updated_on}`
+            cardcontent.appendChild(updated_on)
 
             if (resp.results[i].deadline == null) {
-                deadline.innerHTML = "Deadline : Information not available"
-                cardcontent.appendChild(deadline)
+                updated_on.innerHTML = "Updated On : Information not available"
+                cardcontent.appendChild(updated_on)
             }
 
             cardcontent.appendChild(document.createElement('br'))

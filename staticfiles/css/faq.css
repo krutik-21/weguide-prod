@@ -9,7 +9,7 @@ body {
 }
 
 .faqcontainer{
-    margin-top: 18vmin;
+    margin-top: 2vmin;
 }
 
 .submitbtn {
@@ -41,6 +41,11 @@ body {
     font-size: 2.5vmin;
 }
 
+.collapsible-header i{
+    position: absolute;
+    right: 45px;
+}
+
 .collapsible-body{
     color: #50394c;
     font-family: Poppins;
@@ -56,6 +61,12 @@ body {
     visibility: hidden;
 }
 
+.down {
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+}
+
 @media only screen and (max-width: 960px) {
     .faqcontainer{
         margin-top: 20vmin;
@@ -67,12 +78,12 @@ body {
         text-align: center;
     }
 
-    .collapsible-header{
-        font-size: 3.5vmin;
+    .collapsible-header, .collapsible-header>i{
+        font-size: 4vmin;
     }
 
     .collapsible-body{
-        font-size: 3.3vmin;
+        font-size: 3.5vmin;
         padding: 15px;
     }
 

@@ -25,42 +25,7 @@
 
 <body>
 
-    <div class="navbar-container">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="{% url 'home' %}" class="brand-logo">
-                    WeGuide
-                </a>
-                <a href="#" class="sidenav-trigger" data-target="mobile-links">
-                    <i class="material-icons">menu</i>
-                </a>
-                <ul id="nav-mobile" class="right menu-list hide-on-med-and-down">
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'crowdsourcing' %}">Contribute</a></li>
-                    <li><a href="{% url 'faq' %}">FAQs</a></li>
-                </ul>
-            </div>
-            <div class="nav-content">
-                <ul class="tabs row tabs-transparent hide-on-med-and-down">
-                    <li class="tab col"><a href="{% url 'scholarships' %}">Scholarships</a></li>
-                    <li class="tab col"><a href="{% url 'loans' %}">Loans</a></li>
-                    <li class="tab col active"><a href="{% url 'books' %} ">Bookbanks</a></li>
-                    <li class="tab col"><a href="{% url 'ngos' %}">NGOs</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <ul class="sidenav" id="mobile-links">
-        <li><a href="{% url 'home' %}">WeGuide</a></li>
-        <li class="divider brown"></li>
-        <li><a href="{% url 'scholarships' %}">Scholarships</a></li>
-        <li><a href="{% url 'loans' %}">Loans</a></li>
-        <li class="active"><a href="{% url 'books' %}">Bookbanks</a></li>
-        <li><a href="{% url 'ngos' %}">NGOs</a></li>
-        <li class="divider brown" tabindex="-1"></li>
-        <li><a href="{% url 'crowdsourcing' %}">Contribute</a></li>
-        <li><a href="{% url 'faq' %}">FAQs</a></li>
-    </ul>
+    {% include 'navbar.html' %}
 
 
     <div class="card-container">

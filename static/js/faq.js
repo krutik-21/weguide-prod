@@ -10,6 +10,11 @@ var instance = new M.Sidenav(elem);
 var body = document.getElementsByTagName('body')
 var backDrop = document.getElementById('backDrop')
 
+document.getElementById('faqMobile').classList.add('active')
+
+$(".collapsible-header").click(function(){
+    $(this).children("i").toggleClass("down")
+})
 document.addEventListener('submit',(e) => {
     e.preventDefault();
     var choices = ['schol','loan','book','aboutus','guidance']

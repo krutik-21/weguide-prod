@@ -8,7 +8,7 @@ select{
 
 .card-container{
     position: relative;
-    margin-top: 17vmin !important;
+    margin-top: 2vmin !important;
     font-family: Poppins;
 }
 
@@ -66,6 +66,7 @@ select{
 .card-action {
     text-align: center;
     padding: 2vmin !important;
+    font-weight: bold;
 }
 
 .card-action a{

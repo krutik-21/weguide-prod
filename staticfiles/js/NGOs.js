@@ -11,6 +11,9 @@ var body = document.getElementsByTagName('body')
 var backDrop = document.getElementById('backDrop')
 var instance = new M.Sidenav(elem);
 
+document.getElementById('ngo').classList.add('active')
+document.getElementById('ngoMobile').classList.add('active')
+
 getscholar(url, page = 1)
     .catch(error => {
         console.log(error)

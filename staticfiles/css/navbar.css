@@ -2,10 +2,11 @@
     color: #50394c;
 }
 .brand-logo {
-    margin-left: 7vmin;
-    font-size: 5vmin !important;
+    /* margin-left: 7vmin; */
+    font-size: 6vmin !important;
     font-family: Lobster;
     color: #50394c !important;
+    position: relative !important;
 }
 
 .sidenav{
@@ -16,33 +17,24 @@
 }
 
 
-nav {
-    height: 8vmin;
-    line-height: 8vmin;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    background-color: #ffef96e0 !important;
-    box-shadow: none;
-    font-family: 'Raleway' !important;
+.nav-extended {
+    background-color: #ffef96; 
+    /* padding-bottom: 2vh; */
+    border-bottom: 0.1vmin solid #b1b1b1;
+    position: sticky;
+    top: 0; 
+    z-index: 50;
 }
 
 .tabs{
-    position: fixed;
-    top: 8vmin;
-    height: 8vmin;
-    margin: 0 !important;
-    padding: 0 !important;
-    background-color: #ffef96e0 !important;
-    border-bottom: 0.1vmin solid #b1b1b1;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-bottom: 1vh;
 }
 
 .tabs li{
-    height: 8vmin !important;
+    /* height: 8vmin !important; */
     width: 20% !important;
 }
 
@@ -75,6 +67,7 @@ nav {
 
 .nav-wrapper {
     border-bottom: none;
+    text-align: center;
 }
 
 .menu-list li a {
@@ -101,12 +94,13 @@ nav {
     nav select { display: inline-block; }
     .brand-logo{
         font-size: 7vmin !important;
+        position: absolute !important;
     }
 
     .nav-content{
         display: none;
     }
-    i{
+    .large{
         font-size: 5vmin !important;
         line-height: 15vmin !important;
     }
@@ -117,6 +111,6 @@ nav {
     .sidenav li>a{
         height: 8vh;
         line-height: 8vh;
-        font-size: 2vh;
+        /* font-size: 2vh; */
     }
 }

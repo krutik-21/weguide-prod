@@ -11,6 +11,9 @@ var backDrop = document.getElementById('backDrop')
 var elem = document.querySelector('.sidenav');
 var instance = new M.Sidenav(elem);
 
+document.getElementById('bookbank').classList.add('active')
+document.getElementById('bookbankMobile').classList.add('active')
+
 getscholar(url, page = 1)
     .catch(error => {
         console.log(error)

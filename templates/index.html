@@ -24,43 +24,7 @@
 </head>
 
 <body>
-    <div class="navbar-container">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="{% url 'home' %}" class="brand-logo">
-                    WeGuide
-                </a>
-                <a href="#" class="sidenav-trigger" data-target="mobile-links">
-                    <i class="material-icons">menu</i>
-                </a>
-                <ul id="nav-mobile" class="right menu-list hide-on-med-and-down">
-                    <li class="active"><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'crowdsourcing' %}">Contribute</a></li>
-                    <li><a href="{% url 'faq' %}">FAQs</a></li>
-                </ul>
-            </div>
-            <div class="nav-content">
-                <ul class="tabs row tabs-transparent hide-on-med-and-down">
-                    <li class="tab col"><a href="{% url 'scholarships' %}">Scholarships</a></li>
-                    <li class="tab col"><a href="{% url 'loans' %}">Loans</a></li>
-                    <li class="tab col"><a href="{% url 'books' %} ">Bookbanks</a></li>
-                    <li class="tab col"><a href="{% url 'ngos' %}">NGOs</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <ul class="sidenav" id="mobile-links">
-        <li class="active"><a href="{% url 'home' %}">WeGuide</a></li>
-        <li class="divider brown"></li>
-        <li><a href="{% url 'scholarships' %}">Scholarships</a></li>
-        <li><a href="{% url 'loans' %}">Loans</a></li>
-        <li><a href="{% url 'books' %}">Bookbanks</a></li>
-        <li><a href="{% url 'ngos' %}">NGOs</a></li>
-        <li class="divider brown" tabindex="-1"></li>
-        <li><a href="{% url 'crowdsourcing' %}">Contribute</a></li>
-        <li><a href="{% url 'faq' %}">FAQs</a></li>
-    </ul>
-
+    {% include 'navbar.html' %}
 
     <div class="intro-container">
         <div class="intro-text">
@@ -80,6 +44,7 @@
                 <a href="#"><img src="{% static 'img/travel1.jpg' %}" style="width:100%"></a>
                 <div class="text1"><mark>Est qui velit laborum et cillum incididunt magna Lorem cillum irure.</mark>
                 </div>
+                <div class="text2"><a class="btn-large" href="{% url 'crowdsourcing' %}">Contribute</a></div>
             </div>
 
             <div class="mySlides fade">
@@ -129,102 +94,46 @@
             </p>
         </div>
         <div class="card-container">
-
-            <!-- <div class="col s4">
-                <div class="row">
-                    <div class="col s12 m7"> -->
-                        <div class="card service-card">
-                            <div class="card-image">
-                                <img src="{% static 'img/service1.png' %}">
-                            </div>
-                            <p class="card-head">Card Title</p>
-                            <div class="card-content service-card-content">
-                                <p>Occaecat duis ut aliquip in sint sit magna sit nulla id minim.</p>
-                            </div>
-                        </div>
-                    <!-- </div>
+            <div class="card service-card">
+                <div class="card-image">
+                    <img src="{% static 'img/service1.png' %}">
                 </div>
-            </div> -->
-            <!-- <div class="col s4">
-                <div class="row">
-                    <div class="col s12 m7"> -->
-                        <div class="card service-card">
-                            <div class="card-image">
-                                <img src="{% static 'img/service2.png' %}">
-                            </div>
-                            <p class="card-head">Card Title</p>
-                            <div class="card-content service-card-content">
-                                <p>In eiusmod velit id dolore voluptate culpa cillum ullamco voluptate et nisi dolor.
-                                </p>
-                            </div>
-                        <!-- </div>
-                    </div>
-                </div> -->
+                <p class="card-head">Scholarship</p>
+                <div class="card-content service-card-content">
+                    <p>Occaecat duis ut aliquip in sint sit magna sit nulla id minim.</p>
+                </div>
             </div>
-            <!-- <div class="col s4">
-                <div class="row">
-                    <div class="col s12 m7"> -->
-                        <div class="card service-card">
-                            <div class="card-image">
-                                <img src="{% static 'img/service3.png' %}">
-                            </div>
-                            <p class="card-head">Card Title</p>
-                            <div class="card-content service-card-content">
-                                <p>Dolore aliquip Lorem qui fugiat pariatur ullamco.</p>
-                            </div>
-                        </div>
-                    <!-- </div>
+            <div class="card service-card">
+                <div class="card-image">
+                    <img src="{% static 'img/service2.png' %}">
                 </div>
-            </div> -->
+                <p class="card-head">Loan</p>
+                <div class="card-content service-card-content">
+                    <p>In eiusmod velit id dolore voluptate culpa cillum ullamco voluptate et nisi dolor.
+                    </p>
+                </div>
+            </div>
 
         </div>
         <div class="card-container">
-
-            <!-- <div class="col s4">
-                <div class="row">
-                    <div class="col s12 m7"> -->
-                        <div class="card service-card">
-                            <div class="card-image">
-                                <img src="{% static 'img/service4.png' %}">
-                            </div>
-                            <p class="card-head">Card Title</p>
-                            <div class="card-content service-card-content">
-                                <p>Dolore enim eu et do deserunt.</p>
-                            </div>
-                        </div>
-                    <!-- </div>
+            <div class="card service-card">
+                <div class="card-image">
+                    <img src="{% static 'img/service4.png' %}">
                 </div>
-            </div> -->
-            <!-- <div class="col s4">
-                <div class="row">
-                    <div class="col s12 m7"> -->
-                        <div class="card service-card">
-                            <div class="card-image">
-                                <img src="{% static 'img/service5.png' %}">
-                            </div>
-                            <p class="card-head">Card Title</p>
-                            <div class="card-content service-card-content">
-                                <p>Pariatur officia tempor laborum proident ad.</p>
-                            </div>
-                        </div>
-                    <!-- </div>
+                <p class="card-head">BookBank</p>
+                <div class="card-content service-card-content">
+                    <p>Dolore enim eu et do deserunt.</p>
                 </div>
             </div>
-            <div class="col s4">
-                <div class="row">
-                    <div class="col s12 m7"> -->
-                        <div class="card service-card">
-                            <div class="card-image">
-                                <img src="{% static 'img/service6.png' %}">
-                            </div>
-                            <p class="card-head">Card Title</p>
-                            <div class="card-content service-card-content">
-                                <p>Anim velit non ipsum laborum ad minim elit.</p>
-                            </div>
-                        </div>
-                    <!-- </div>
+            <div class="card service-card">
+                <div class="card-image">
+                    <img src="{% static 'img/service5.png' %}">
                 </div>
-            </div> -->
+                <p class="card-head">NGO</p>
+                <div class="card-content service-card-content">
+                    <p>Pariatur officia tempor laborum proident ad.</p>
+                </div>
+            </div>
 
         </div>
 
@@ -238,73 +147,52 @@
         </div>
 
         <div class="test-card-container">
-
-            <!-- <div class="col s4">
-                <div class="row">
-                    <div class="col s12 m7"> -->
-                        <div class="card test-card">
-                            <div class="card-image test-card-img">
-                                <img src="{% static 'img/person.png' %}">
-                            </div>
-                            <p class="card-head">Card Title</p>
-                            <div class="card-content truncate-overflow">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am
-                                    convenient because I require little markup to use effectively.I am a very simple card. I am good at containing small bits of information. I am
-                                    convenient because I require little markup to use effectively.I am a very simple card. I am good at containing small bits of information. I am
-                                    convenient because I require little markup to use effectively.I am a very simple card. I am good at containing small bits of information. I am
-                                    convenient because I require little markup to use effectively.</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="#ffc400 amber-text accent-3">Read More &nbsp;<i
-                                        class="material-icons hide-on-med-and-down">east</i></a>
-                            </div>
-                        </div>
-                    <!-- </div>
+            <div class="card test-card">
+                <div class="card-image test-card-img">
+                    <img src="{% static 'img/person.png' %}">
+                </div>
+                <p class="card-head">Card Title</p>
+                <div class="card-content truncate-overflow">
+                    <p>I am a very simple card. I am good at containing small bits of information. I am
+                        convenient because I require little markup to use effectively.I am a very simple card. I am good at containing small bits of information. I am
+                        convenient because I require little markup to use effectively.I am a very simple card. I am good at containing small bits of information. I am
+                        convenient because I require little markup to use effectively.I am a very simple card. I am good at containing small bits of information. I am
+                        convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="#ffc400 amber-text accent-3">Read More &nbsp;<i
+                            class="material-icons hide-on-med-and-down">east</i></a>
                 </div>
             </div>
-            <div class="col s4">
-                <div class="row">
-                    <div class="col s12 m7"> -->
-                        <div class="card test-card">
-                            <div class="card-image test-card-img">
-                                <img src="{% static 'img/person.png' %}">
-                            </div>
-                            <p class="card-head">Card Title</p>
-                            <div class="card-content truncate-overflow">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am
-                                    convenient because I require little markup to use effectively.</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="#ffc400 amber-text accent-3">Read More &nbsp;<i
-                                        class="material-icons hide-on-med-and-down">east</i></a>
-                            </div>
-                        </div>
-                    <!-- </div>
+            <div class="card test-card">
+                <div class="card-image test-card-img">
+                    <img src="{% static 'img/person.png' %}">
+                </div>
+                <p class="card-head">Card Title</p>
+                <div class="card-content truncate-overflow">
+                    <p>I am a very simple card. I am good at containing small bits of information. I am
+                        convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="#ffc400 amber-text accent-3">Read More &nbsp;<i
+                            class="material-icons hide-on-med-and-down">east</i></a>
                 </div>
             </div>
-            <div class="col s4">
-                <div class="row">
-                    <div class="col s12 m7"> -->
-                        <div class="card test-card">
-                            <div class="card-image test-card-img">
-                                <img src="{% static 'img/person.png' %}">
-                            </div>
-                            <p class="card-head">Card Title</p>
-                            <div class="card-content truncate-overflow">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am
-                                    convenient because I require little markup to use effectively.</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" class="#ffc400 amber-text accent-3">Read More &nbsp;<i class="material-icons hide-on-med-and-down">east</i></a>
-                            </div>
-                        </div>
-                    <!-- </div>
+            <div class="card test-card">
+                <div class="card-image test-card-img">
+                    <img src="{% static 'img/person.png' %}">
                 </div>
-            </div> -->
+                <p class="card-head">Card Title</p>
+                <div class="card-content truncate-overflow">
+                    <p>I am a very simple card. I am good at containing small bits of information. I am
+                        convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="#ffc400 amber-text accent-3">Read More &nbsp;<i class="material-icons hide-on-med-and-down">east</i></a>
+                </div>
+            </div>
 
         </div>
-
-        <a class="waves-effect waves-light btn test-btn">View All &nbsp; <i class="material-icons hide-on-med-and-down">east</i></a>
 
     </div>
 

@@ -1,5 +1,5 @@
 .intro-container{
-    margin-top: 20vmin;
+    margin-top: 10vmin;
     height: fit-content;
     width: 100%;
     display: flex;
@@ -51,6 +51,7 @@ hr {
     text-align: center;
     padding: 5vmin 15vmin;
     color: rgb(100, 100, 100);
+    font-size: 2.5vh;
 }
 
 .card-container {
@@ -62,9 +63,9 @@ hr {
 }
 
 .service-card {
-    width: 30%;
+    width: 40%;
     height: fit-content;
-    box-shadow: 12px 12px 5px rgb(247, 247, 247);
+    box-shadow: 7px 7px 7px rgb(247, 247, 247);
     border-radius: 3vmin;
 }
 
@@ -118,7 +119,7 @@ hr {
 .test-card {
     width: 27%;
     /* height: 50vmin; */
-    box-shadow: 12px 12px 5px rgb(247, 247, 247);
+    box-shadow: 7px 7px 7px rgb(247, 247, 247);
     border-radius: 3vmin;
 }
 
@@ -156,6 +157,10 @@ hr {
 .test-btn:active {
     color: black;
     border: 0.1vmin solid black;
+}
+
+.card .card-content p{
+    font-size: 2.2vh !important;
 }
 
 @media only screen and (max-width: 960px) {

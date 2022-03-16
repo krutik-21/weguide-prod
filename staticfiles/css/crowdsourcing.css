@@ -21,7 +21,7 @@ body {
     color: #50394c;
     font-family: Raleway;
     text-align: center;
-    margin-top: 18vmin;
+    margin-top: 2vmin;
 }
 
 .inform p{
@@ -77,6 +77,7 @@ body {
 
 .forminput label{
     font-weight: normal;
+    font-size: 1.2rem !important;
 }
 
 .submitbtn{
@@ -89,8 +90,7 @@ body {
 }
 
 input, textarea{
-    height: 6vmin !important;
-    font-size: 2.5vmin !important;
+    height: 7.5vmin !important;
 }
 
 .input-field ul{
@@ -141,7 +141,7 @@ input, textarea{
     }
 
     .submitbtn{
-        width: 50%;
+        width: 90%;
         padding-bottom: 3vmin;
         font-size: 3.5vmin;
         line-height: 3;

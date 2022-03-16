@@ -1,6 +1,8 @@
 var elem = document.querySelector('.sidenav');
 var instance = new M.Sidenav(elem);
 
+document.getElementById('contributeMobile').classList.add('active')
+
 top.visible_div_id = 'north';
 
 function toggle_visibility(id) {
